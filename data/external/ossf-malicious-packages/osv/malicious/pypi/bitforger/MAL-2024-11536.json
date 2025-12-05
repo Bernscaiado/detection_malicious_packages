@@ -1,0 +1,132 @@
+{
+  "modified": "2025-12-03T00:04:26Z",
+  "published": "2024-09-28T09:22:43Z",
+  "schema_version": "1.7.4",
+  "id": "MAL-2024-11536",
+  "summary": "Malicious code in bitforger (PyPI)",
+  "details": "\n---\n_-= Per source details. Do not edit below this line.=-_\n\n## Source: kam193 (9dff60a2be2c253f919aae6a6724cd140df2a3ca9bdcca9e637ea74bc987ac0f)\nWhen running the module, this package attempts - depending on the version - to exfiltrate user files, a screenshot, or crypto wallets data (8.1.4).\n\nLater continued under different package names.\n\n\n---\n\nCategory: MALICIOUS - The campaign has clearly malicious intent, like infostealers.\n\n\nCampaign: 2024-09-bitbit\n\n\nReasons (based on the campaign):\n\n\n - files-exfiltration\n\n\n - crypto-related\n",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "bitforger",
+        "purl": "pkg:pypi/bitforger"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "0",
+        "0.1.0",
+        "1.1.2",
+        "1.1.3",
+        "2.3.4",
+        "2.3.5",
+        "5.1",
+        "5.1.4",
+        "6.1.2",
+        "8.1"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://bad-packages.kam193.eu/pypi/package/bitforger"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kamil Mańkowski (kam193)",
+      "contact": [
+        "https://github.com/kam193",
+        "https://bad-packages.kam193.eu/"
+      ]
+    },
+    {
+      "name": "Kamil Mańkowski (kam193)",
+      "type": "ANALYST",
+      "contact": [
+        "https://github.com/kam193",
+        "https://bad-packages.kam193.eu/"
+      ]
+    },
+    {
+      "name": "ReversingLabs",
+      "type": "FINDER",
+      "contact": [
+        "https://www.reversinglabs.com"
+      ]
+    }
+  ],
+  "database_specific": {
+    "iocs": {
+      "urls": [
+        "https://raw.githubusercontent.com/skibiditoiletfan1123/someting23/refs/heads/main/fishrelease.pyw",
+        "https://github.com/skibiditoiletfan1123/someting23"
+      ]
+    },
+    "malicious-packages-origins": [
+      {
+        "source": "reversing-labs",
+        "sha256": "87a11094f7b45e601e1a3832288695a1c8974868bffef13c2dedb55f33f74e16",
+        "import_time": "2024-12-09T14:38:41.158296874Z",
+        "id": "RLMA-2024-10981",
+        "modified_time": "2024-12-09T06:49:50Z",
+        "versions": [
+          "0",
+          "0.1.0",
+          "1.1.2",
+          "1.1.3",
+          "2.3.4",
+          "2.3.5",
+          "5.1",
+          "5.1.4",
+          "6.1.2",
+          "8.1"
+        ]
+      },
+      {
+        "source": "kam193",
+        "sha256": "8b428db04dbf710c24a731141654e1114f3d8d2ac8b2017b1bf56d2a7da5ae1f",
+        "import_time": "2025-12-02T22:30:54.996863084Z",
+        "id": "pypi/2024-09-bitbit/bitforger",
+        "modified_time": "2024-09-28T09:22:43Z",
+        "ranges": [
+          {
+            "type": "ECOSYSTEM",
+            "events": [
+              {
+                "introduced": "0"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "source": "kam193",
+        "sha256": "9dff60a2be2c253f919aae6a6724cd140df2a3ca9bdcca9e637ea74bc987ac0f",
+        "import_time": "2025-12-02T23:07:18.026924244Z",
+        "id": "pypi/2024-09-bitbit/bitforger",
+        "modified_time": "2024-09-28T09:22:43Z",
+        "ranges": [
+          {
+            "type": "ECOSYSTEM",
+            "events": [
+              {
+                "introduced": "0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
