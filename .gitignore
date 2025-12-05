@@ -1,0 +1,6 @@
+# Large external datasets – do NOT commit
+data/external/ossf-malicious-packages/
+data/external/malicious-software-packages-dataset/
+
+
+
