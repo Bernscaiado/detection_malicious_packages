@@ -1,0 +1,657 @@
+ecosystem,package_name,version,is_malicious_datadog,is_malicious_osv,osv_id,osv_published,osv_modified,osv_summary,is_malicious_any_version
+npm,@ahmedhfarag/ngx-perfect-scrollbar,20.0.20,True,False,,,,,True
+npm,@ahmedhfarag/ngx-virtual-scroller,4.0.4,True,False,,,,,True
+npm,@art-ws/common,2.0.28,True,False,,,,,True
+npm,@art-ws/config-eslint,2.0.4,True,False,,,,,True
+npm,@art-ws/config-ts,2.0.7,True,False,,,,,True
+npm,@art-ws/config-ts,2.0.8,True,False,,,,,True
+npm,@art-ws/db-context,2.0.24,True,False,,,,,True
+npm,@art-ws/di,2.0.28,True,False,,,,,True
+npm,@art-ws/di,2.0.32,True,False,,,,,True
+npm,@art-ws/di-node,2.0.13,True,False,,,,,True
+npm,@art-ws/eslint,1.0.5,True,False,,,,,True
+npm,@art-ws/eslint,1.0.6,True,False,,,,,True
+npm,@art-ws/fastify-http-server,2.0.24,True,False,,,,,True
+npm,@art-ws/fastify-http-server,2.0.27,True,False,,,,,True
+npm,@art-ws/http-server,2.0.21,True,False,,,,,True
+npm,@art-ws/http-server,2.0.25,True,False,,,,,True
+npm,@art-ws/openapi,0.1.12,True,False,,,,,True
+npm,@art-ws/openapi,0.1.9,True,False,,,,,True
+npm,@art-ws/package-base,1.0.5,True,False,,,,,True
+npm,@art-ws/prettier,1.0.5,True,False,,,,,True
+npm,@art-ws/slf,2.0.15,True,False,,,,,True
+npm,@art-ws/slf,2.0.22,True,False,,,,,True
+npm,@art-ws/ssl-info,1.0.10,True,False,,,,,True
+npm,@art-ws/ssl-info,1.0.9,True,False,,,,,True
+npm,@art-ws/web-app,1.0.3,True,False,,,,,True
+npm,@coveops/abi,2.0.1,True,False,,,,,True
+npm,@crowdstrike/commitlint,8.1.1,True,False,,,,,True
+npm,@crowdstrike/commitlint,8.1.2,True,False,,,,,True
+npm,@crowdstrike/falcon-shoelace,0.4.1,True,False,,,,,True
+npm,@crowdstrike/falcon-shoelace,0.4.2,True,False,,,,,True
+npm,@crowdstrike/foundry-js,0.19.1,True,False,,,,,True
+npm,@crowdstrike/foundry-js,0.19.2,True,False,,,,,True
+npm,@crowdstrike/glide-core,0.34.2,True,False,,,,,True
+npm,@crowdstrike/glide-core,0.34.3,True,False,,,,,True
+npm,@crowdstrike/logscale-file-editor,1.205.2,True,False,,,,,True
+npm,@crowdstrike/tailwind-toucan-base,5.0.1,True,False,,,,,True
+npm,@crowdstrike/tailwind-toucan-base,5.0.2,True,False,,,,,True
+npm,@ctrl/deluge,7.2.1,True,False,,,,,True
+npm,@ctrl/deluge,7.2.2,True,False,,,,,True
+npm,@ctrl/golang-template,1.4.2,True,False,,,,,True
+npm,@ctrl/golang-template,1.4.3,True,False,,,,,True
+npm,@ctrl/magnet-link,4.0.3,True,False,,,,,True
+npm,@ctrl/magnet-link,4.0.4,True,False,,,,,True
+npm,@ctrl/ngx-codemirror,7.0.1,True,False,,,,,True
+npm,@ctrl/ngx-codemirror,7.0.2,True,False,,,,,True
+npm,@ctrl/ngx-csv,6.0.1,True,False,,,,,True
+npm,@ctrl/ngx-csv,6.0.2,True,False,,,,,True
+npm,@ctrl/ngx-rightclick,4.0.1,True,False,,,,,True
+npm,@ctrl/ngx-rightclick,4.0.2,True,False,,,,,True
+npm,@ctrl/qbittorrent,9.7.1,True,False,,,,,True
+npm,@ctrl/qbittorrent,9.7.2,True,False,,,,,True
+npm,@ctrl/react-adsense,2.0.1,True,False,,,,,True
+npm,@ctrl/react-adsense,2.0.2,True,False,,,,,True
+npm,@ctrl/shared-torrent,6.3.1,True,False,,,,,True
+npm,@ctrl/shared-torrent,6.3.2,True,False,,,,,True
+npm,@ctrl/tinycolor,4.1.1,True,False,,,,,True
+npm,@ctrl/tinycolor,4.1.2,True,False,,,,,True
+npm,@ctrl/torrent-file,4.1.1,True,False,,,,,True
+npm,@ctrl/torrent-file,4.1.2,True,False,,,,,True
+npm,@ctrl/transmission,7.3.1,True,False,,,,,True
+npm,@ctrl/ts-base32,4.0.1,True,False,,,,,True
+npm,@ctrl/ts-base32,4.0.2,True,False,,,,,True
+npm,@duckdb/duckdb-wasm,1.29.2,True,False,,,,,True
+npm,@duckdb/node-api,1.3.3,True,False,,,,,True
+npm,@gluestack-ui/utils,0.1.16,True,False,,,,,True
+npm,@gluestack-ui/utils,0.1.17,True,False,,,,,True
+npm,@hestjs/core,0.2.1,True,False,,,,,True
+npm,@hestjs/cqrs,0.1.6,True,False,,,,,True
+npm,@hestjs/demo,0.1.2,True,False,,,,,True
+npm,@hestjs/eslint-config,0.1.2,True,False,,,,,True
+npm,@hestjs/logger,0.1.6,True,False,,,,,True
+npm,@hestjs/scalar,0.1.7,True,False,,,,,True
+npm,@hestjs/validation,0.1.6,True,False,,,,,True
+npm,@nativescript-community/arraybuffers,1.1.6,True,False,,,,,True
+npm,@nativescript-community/arraybuffers,1.1.7,True,False,,,,,True
+npm,@nativescript-community/gesturehandler,2.0.35,True,False,,,,,True
+npm,@nativescript-community/perms,3.0.5,True,False,,,,,True
+npm,@nativescript-community/perms,3.0.6,True,False,,,,,True
+npm,@nativescript-community/perms,3.0.9,True,False,,,,,True
+npm,@nativescript-community/sentry,4.6.43,True,False,,,,,True
+npm,@nativescript-community/sqlite,3.5.4,True,False,,,,,True
+npm,@nativescript-community/sqlite,3.5.5,True,False,,,,,True
+npm,@nativescript-community/text,1.6.10,True,False,,,,,True
+npm,@nativescript-community/text,1.6.13,True,False,,,,,True
+npm,@nativescript-community/text,1.6.9,True,False,,,,,True
+npm,@nativescript-community/ui-collectionview,6.0.6,True,False,,,,,True
+npm,@nativescript-community/ui-document-picker,1.1.28,True,False,,,,,True
+npm,@nativescript-community/ui-drawer,0.1.30,True,False,,,,,True
+npm,@nativescript-community/ui-image,4.5.6,True,False,,,,,True
+npm,@nativescript-community/ui-label,1.3.35,True,False,,,,,True
+npm,@nativescript-community/ui-label,1.3.36,True,False,,,,,True
+npm,@nativescript-community/ui-material-bottom-navigation,7.2.73,True,False,,,,,True
+npm,@nativescript-community/ui-material-bottomsheet,7.2.72,True,False,,,,,True
+npm,@nativescript-community/ui-material-core,7.2.73,True,False,,,,,True
+npm,@nativescript-community/ui-material-core,7.2.76,True,False,,,,,True
+npm,@nativescript-community/ui-material-core-tabs,7.2.73,True,False,,,,,True
+npm,@nativescript-community/ui-material-core-tabs,7.2.75,True,False,,,,,True
+npm,@nativescript-community/ui-material-core-tabs,7.2.76,True,False,,,,,True
+npm,@nativescript-community/ui-material-tabs,7.2.73,True,False,,,,,True
+npm,@nativescript-community/ui-pager,14.1.36,True,False,,,,,True
+npm,@nativescript-community/ui-pager,14.1.38,True,False,,,,,True
+npm,@nativescript-community/ui-pulltorefresh,2.5.5,True,False,,,,,True
+npm,@nexe/config-manager,0.1.1,True,False,,,,,True
+npm,@nexe/eslint-config,0.1.1,True,False,,,,,True
+npm,@nexe/logger,0.1.3,True,False,,,,,True
+npm,@nstudio/angular,20.0.4,True,False,,,,,True
+npm,@nstudio/angular,20.0.5,True,False,,,,,True
+npm,@nstudio/focus,20.0.5,True,False,,,,,True
+npm,@nstudio/focus,20.0.6,True,False,,,,,True
+npm,@nstudio/nativescript-checkbox,2.0.6,True,False,,,,,True
+npm,@nstudio/nativescript-checkbox,2.0.7,True,False,,,,,True
+npm,@nstudio/nativescript-checkbox,2.0.9,True,False,,,,,True
+npm,@nstudio/nativescript-loading-indicator,5.0.1,True,False,,,,,True
+npm,@nstudio/nativescript-loading-indicator,5.0.2,True,False,,,,,True
+npm,@nstudio/nativescript-loading-indicator,5.0.4,True,False,,,,,True
+npm,@nstudio/ui-collectionview,5.1.11,True,False,,,,,True
+npm,@nstudio/ui-collectionview,5.1.12,True,False,,,,,True
+npm,@nstudio/ui-collectionview,5.1.14,True,False,,,,,True
+npm,@nstudio/web,20.0.4,True,False,,,,,True
+npm,@nstudio/web-angular,20.0.4,True,False,,,,,True
+npm,@nstudio/xplat,20.0.5,True,False,,,,,True
+npm,@nstudio/xplat,20.0.7,True,False,,,,,True
+npm,@nstudio/xplat-utils,20.0.5,True,False,,,,,True
+npm,@nstudio/xplat-utils,20.0.6,True,False,,,,,True
+npm,@nx/devkit,21.5.0,True,False,,,,,True
+npm,@nx/enterprise-cloud,3.2.0,True,False,,,,,True
+npm,@nx/eslint,21.5.0,True,False,,,,,True
+npm,@nx/js,21.5.0,True,False,,,,,True
+npm,@nx/key,3.2.0,True,False,,,,,True
+npm,@nx/node,21.5.0,True,False,,,,,True
+npm,@nx/workspace,21.5.0,True,False,,,,,True
+npm,@operato/board,9.0.35,True,False,,,,,True
+npm,@operato/board,9.0.36,True,False,,,,,True
+npm,@operato/board,9.0.37,True,False,,,,,True
+npm,@operato/board,9.0.39,True,False,,,,,True
+npm,@operato/board,9.0.40,True,False,,,,,True
+npm,@operato/board,9.0.41,True,False,,,,,True
+npm,@operato/board,9.0.42,True,False,,,,,True
+npm,@operato/board,9.0.43,True,False,,,,,True
+npm,@operato/board,9.0.45,True,False,,,,,True
+npm,@operato/board,9.0.46,True,False,,,,,True
+npm,@operato/board,9.0.48,True,False,,,,,True
+npm,@operato/board,9.0.51,True,False,,,,,True
+npm,@operato/data-grist,9.0.29,True,False,,,,,True
+npm,@operato/data-grist,9.0.35,True,False,,,,,True
+npm,@operato/data-grist,9.0.36,True,False,,,,,True
+npm,@operato/data-grist,9.0.37,True,False,,,,,True
+npm,@operato/graphql,9.0.22,True,False,,,,,True
+npm,@operato/graphql,9.0.35,True,False,,,,,True
+npm,@operato/graphql,9.0.36,True,False,,,,,True
+npm,@operato/graphql,9.0.37,True,False,,,,,True
+npm,@operato/graphql,9.0.39,True,False,,,,,True
+npm,@operato/graphql,9.0.40,True,False,,,,,True
+npm,@operato/graphql,9.0.41,True,False,,,,,True
+npm,@operato/graphql,9.0.42,True,False,,,,,True
+npm,@operato/graphql,9.0.43,True,False,,,,,True
+npm,@operato/graphql,9.0.44,True,False,,,,,True
+npm,@operato/graphql,9.0.45,True,False,,,,,True
+npm,@operato/graphql,9.0.48,True,False,,,,,True
+npm,@operato/graphql,9.0.51,True,False,,,,,True
+npm,@operato/headroom,9.0.2,True,False,,,,,True
+npm,@operato/headroom,9.0.35,True,False,,,,,True
+npm,@operato/headroom,9.0.36,True,False,,,,,True
+npm,@operato/headroom,9.0.37,True,False,,,,,True
+npm,@operato/help,9.0.35,True,False,,,,,True
+npm,@operato/help,9.0.36,True,False,,,,,True
+npm,@operato/help,9.0.37,True,False,,,,,True
+npm,@operato/help,9.0.39,True,False,,,,,True
+npm,@operato/help,9.0.40,True,False,,,,,True
+npm,@operato/help,9.0.41,True,False,,,,,True
+npm,@operato/help,9.0.42,True,False,,,,,True
+npm,@operato/help,9.0.43,True,False,,,,,True
+npm,@operato/help,9.0.45,True,False,,,,,True
+npm,@operato/help,9.0.48,True,False,,,,,True
+npm,@operato/help,9.0.51,True,False,,,,,True
+npm,@operato/i18n,9.0.35,True,False,,,,,True
+npm,@operato/i18n,9.0.36,True,False,,,,,True
+npm,@operato/input,9.0.27,True,False,,,,,True
+npm,@operato/input,9.0.35,True,False,,,,,True
+npm,@operato/input,9.0.36,True,False,,,,,True
+npm,@operato/input,9.0.37,True,False,,,,,True
+npm,@operato/input,9.0.39,True,False,,,,,True
+npm,@operato/input,9.0.40,True,False,,,,,True
+npm,@operato/input,9.0.41,True,False,,,,,True
+npm,@operato/input,9.0.42,True,False,,,,,True
+npm,@operato/input,9.0.43,True,False,,,,,True
+npm,@operato/input,9.0.45,True,False,,,,,True
+npm,@operato/input,9.0.46,True,False,,,,,True
+npm,@operato/input,9.0.47,True,False,,,,,True
+npm,@operato/input,9.0.48,True,False,,,,,True
+npm,@operato/layout,9.0.35,True,False,,,,,True
+npm,@operato/layout,9.0.36,True,False,,,,,True
+npm,@operato/layout,9.0.37,True,False,,,,,True
+npm,@operato/popup,9.0.22,True,False,,,,,True
+npm,@operato/popup,9.0.35,True,False,,,,,True
+npm,@operato/popup,9.0.36,True,False,,,,,True
+npm,@operato/popup,9.0.37,True,False,,,,,True
+npm,@operato/popup,9.0.39,True,False,,,,,True
+npm,@operato/popup,9.0.40,True,False,,,,,True
+npm,@operato/popup,9.0.41,True,False,,,,,True
+npm,@operato/popup,9.0.42,True,False,,,,,True
+npm,@operato/popup,9.0.43,True,False,,,,,True
+npm,@operato/popup,9.0.44,True,False,,,,,True
+npm,@operato/popup,9.0.45,True,False,,,,,True
+npm,@operato/popup,9.0.48,True,False,,,,,True
+npm,@operato/popup,9.0.51,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.35,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.36,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.37,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.38,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.39,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.40,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.41,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.43,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.44,True,False,,,,,True
+npm,@operato/pull-to-refresh,9.0.47,True,False,,,,,True
+npm,@operato/shell,9.0.22,True,False,,,,,True
+npm,@operato/shell,9.0.35,True,False,,,,,True
+npm,@operato/shell,9.0.36,True,False,,,,,True
+npm,@operato/shell,9.0.37,True,False,,,,,True
+npm,@operato/shell,9.0.39,True,False,,,,,True
+npm,@operato/styles,9.0.2,True,False,,,,,True
+npm,@operato/styles,9.0.35,True,False,,,,,True
+npm,@operato/styles,9.0.36,True,False,,,,,True
+npm,@operato/styles,9.0.37,True,False,,,,,True
+npm,@operato/utils,9.0.22,True,False,,,,,True
+npm,@operato/utils,9.0.35,True,False,,,,,True
+npm,@operato/utils,9.0.36,True,False,,,,,True
+npm,@operato/utils,9.0.37,True,False,,,,,True
+npm,@operato/utils,9.0.39,True,False,,,,,True
+npm,@operato/utils,9.0.40,True,False,,,,,True
+npm,@operato/utils,9.0.41,True,False,,,,,True
+npm,@operato/utils,9.0.42,True,False,,,,,True
+npm,@operato/utils,9.0.43,True,False,,,,,True
+npm,@operato/utils,9.0.45,True,False,,,,,True
+npm,@operato/utils,9.0.48,True,False,,,,,True
+npm,@operato/utils,9.0.50,True,False,,,,,True
+npm,@operato/utils,9.0.51,True,False,,,,,True
+npm,@pkgr/core,0.2.8,True,False,,,,,True
+npm,@react-native-aria/button,0.2.11,True,False,,,,,True
+npm,@react-native-aria/checkbox,0.2.11,True,False,,,,,True
+npm,@react-native-aria/combobox,0.2.8,True,False,,,,,True
+npm,@react-native-aria/disclosure,0.2.9,True,False,,,,,True
+npm,@react-native-aria/focus,0.2.10,True,False,,,,,True
+npm,@react-native-aria/interactions,0.2.17,True,False,,,,,True
+npm,@react-native-aria/listbox,0.2.10,True,False,,,,,True
+npm,@react-native-aria/menu,0.2.16,True,False,,,,,True
+npm,@react-native-aria/overlays,0.3.16,True,False,,,,,True
+npm,@react-native-aria/radio,0.2.14,True,False,,,,,True
+npm,@react-native-aria/separator,0.2.7,True,False,,,,,True
+npm,@react-native-aria/slider,0.2.13,True,False,,,,,True
+npm,@react-native-aria/switch,0.2.5,True,False,,,,,True
+npm,@react-native-aria/tabs,0.2.14,True,False,,,,,True
+npm,@react-native-aria/toggle,0.2.12,True,False,,,,,True
+npm,@react-native-aria/utils,0.2.13,True,False,,,,,True
+npm,@rspack/cli,1.1.7,True,False,,,,,True
+npm,@rspack/core,1.1.7,True,False,,,,,True
+npm,@rxap/ngx-bootstrap,19.0.3,True,False,,,,,True
+npm,@rxap/ngx-bootstrap,19.0.4,True,False,,,,,True
+npm,@solana/web3.js,1.95.7,True,False,,,,,True
+npm,@teselagen/bio-parsers,0.4.29,True,False,,,,,True
+npm,@teselagen/bounce-loader,0.3.16,True,False,,,,,True
+npm,@teselagen/bounce-loader,0.3.17,True,False,,,,,True
+npm,@teselagen/file-utils,0.3.21,True,False,,,,,True
+npm,@teselagen/liquibase-tools,0.4.1,True,False,,,,,True
+npm,@teselagen/range-utils,0.3.14,True,False,,,,,True
+npm,@teselagen/react-list,0.8.19,True,False,,,,,True
+npm,@teselagen/sequence-utils,0.3.33,True,False,,,,,True
+npm,@thangved/callback-window,1.1.4,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.42,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.43,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.44,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.45,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.46,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.47,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.48,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.49,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.51,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.52,True,False,,,,,True
+npm,@things-factory/attachment-base,9.0.55,True,False,,,,,True
+npm,@things-factory/auth-base,9.0.42,True,False,,,,,True
+npm,@things-factory/auth-base,9.0.43,True,False,,,,,True
+npm,@things-factory/auth-base,9.0.44,True,False,,,,,True
+npm,@things-factory/auth-base,9.0.45,True,False,,,,,True
+npm,@things-factory/email-base,9.0.42,True,False,,,,,True
+npm,@things-factory/email-base,9.0.43,True,False,,,,,True
+npm,@things-factory/email-base,9.0.44,True,False,,,,,True
+npm,@things-factory/email-base,9.0.45,True,False,,,,,True
+npm,@things-factory/email-base,9.0.47,True,False,,,,,True
+npm,@things-factory/email-base,9.0.48,True,False,,,,,True
+npm,@things-factory/email-base,9.0.49,True,False,,,,,True
+npm,@things-factory/email-base,9.0.50,True,False,,,,,True
+npm,@things-factory/email-base,9.0.51,True,False,,,,,True
+npm,@things-factory/email-base,9.0.53,True,False,,,,,True
+npm,@things-factory/email-base,9.0.54,True,False,,,,,True
+npm,@things-factory/email-base,9.0.55,True,False,,,,,True
+npm,@things-factory/email-base,9.0.56,True,False,,,,,True
+npm,@things-factory/email-base,9.0.59,True,False,,,,,True
+npm,@things-factory/env,9.0.42,True,False,,,,,True
+npm,@things-factory/env,9.0.43,True,False,,,,,True
+npm,@things-factory/env,9.0.44,True,False,,,,,True
+npm,@things-factory/env,9.0.45,True,False,,,,,True
+npm,@things-factory/integration-base,9.0.42,True,False,,,,,True
+npm,@things-factory/integration-base,9.0.43,True,False,,,,,True
+npm,@things-factory/integration-base,9.0.44,True,False,,,,,True
+npm,@things-factory/integration-base,9.0.45,True,False,,,,,True
+npm,@things-factory/integration-marketplace,9.0.42,True,False,,,,,True
+npm,@things-factory/integration-marketplace,9.0.43,True,False,,,,,True
+npm,@things-factory/integration-marketplace,9.0.44,True,False,,,,,True
+npm,@things-factory/integration-marketplace,9.0.45,True,False,,,,,True
+npm,@things-factory/shell,9.0.42,True,False,,,,,True
+npm,@things-factory/shell,9.0.43,True,False,,,,,True
+npm,@things-factory/shell,9.0.44,True,False,,,,,True
+npm,@things-factory/shell,9.0.45,True,False,,,,,True
+npm,@tnf-dev/api,1.0.8,True,False,,,,,True
+npm,@tnf-dev/core,1.0.8,True,False,,,,,True
+npm,@tnf-dev/js,1.0.8,True,False,,,,,True
+npm,@tnf-dev/mui,1.0.8,True,False,,,,,True
+npm,@tnf-dev/react,1.0.8,True,False,,,,,True
+npm,@toptal/picasso-charts,59.1.4,True,False,,,,,True
+npm,@toptal/picasso-forms,73.3.2,True,False,,,,,True
+npm,@toptal/picasso-provider,5.1.1,True,False,,,,,True
+npm,@toptal/picasso-quote,2.1.7,True,False,,,,,True
+npm,@toptal/picasso-select,4.2.2,True,False,,,,,True
+npm,@toptal/picasso-shared,15.1.0,True,False,,,,,True
+npm,@toptal/picasso-tailwind,3.1.0,True,False,,,,,True
+npm,@toptal/picasso-typography,4.1.4,True,False,,,,,True
+npm,@toptal/picasso-utils,3.2.0,True,False,,,,,True
+npm,@xene/core,0.4.1,True,False,,,,,True
+npm,@yoobic/design-system,6.5.17,True,False,,,,,True
+npm,@yoobic/jpeg-camera-es6,1.0.13,True,False,,,,,True
+npm,@yoobic/yobi,8.7.53,True,False,,,,,True
+npm,ace-colorpicker-rpk,0.0.14,True,False,,,,,True
+npm,airchief,0.3.1,True,False,,,,,True
+npm,airpilot,0.8.8,True,False,,,,,True
+npm,ansi-regex,6.2.1,True,False,,,,,True
+npm,ansi-styles,6.2.2,True,False,,,,,True
+npm,backslash,0.2.1,True,False,,,,,True
+npm,browser-webdriver-downloader,3.0.8,True,False,,,,,True
+npm,capacitor-notificationhandler,0.0.2,True,False,,,,,True
+npm,capacitor-plugin-healthapp,0.0.2,True,False,,,,,True
+npm,capacitor-plugin-ihealth,1.1.8,True,False,,,,,True
+npm,capacitor-plugin-ihealth,1.1.9,True,False,,,,,True
+npm,capacitor-plugin-vonage,1.0.2,True,False,,,,,True
+npm,capacitorandroidpermissions,0.0.4,True,False,,,,,True
+npm,chalk-template,1.1.1,True,False,,,,,True
+npm,color-convert,3.1.1,True,False,,,,,True
+npm,color-name,2.0.1,True,False,,,,,True
+npm,config-cordova,0.8.5,True,False,,,,,True
+npm,cordova-plugin-voxeet2,1.0.24,True,False,,,,,True
+npm,cordova-voxeet,1.0.32,True,False,,,,,True
+npm,create-hest-app,0.1.9,True,False,,,,,True
+npm,db-evo,1.1.4,True,False,,,,,True
+npm,db-evo,1.1.5,True,False,,,,,True
+npm,debug,4.4.2,True,False,,,,,True
+npm,duckdb,1.3.3,True,False,,,,,True
+npm,ember-browser-services,5.0.2,True,False,,,,,True
+npm,ember-browser-services,5.0.3,True,False,,,,,True
+npm,ember-headless-form,1.1.2,True,False,,,,,True
+npm,ember-headless-form,1.1.3,True,False,,,,,True
+npm,ember-headless-form-yup,1.0.1,True,False,,,,,True
+npm,ember-headless-table,2.1.5,True,False,,,,,True
+npm,ember-headless-table,2.1.6,True,False,,,,,True
+npm,ember-url-hash-polyfill,1.0.12,True,False,,,,,True
+npm,ember-url-hash-polyfill,1.0.13,True,False,,,,,True
+npm,ember-velcro,2.2.1,True,False,,,,,True
+npm,ember-velcro,2.2.2,True,False,,,,,True
+npm,encounter-playground,0.0.2,True,False,,,,,True
+npm,encounter-playground,0.0.3,True,False,,,,,True
+npm,encounter-playground,0.0.4,True,False,,,,,True
+npm,error-ex,1.3.3,True,False,,,,,True
+npm,eslint-config-crowdstrike,11.0.2,True,False,,,,,True
+npm,eslint-config-crowdstrike,11.0.3,True,False,,,,,True
+npm,eslint-config-crowdstrike-node,4.0.3,True,False,,,,,True
+npm,eslint-config-crowdstrike-node,4.0.4,True,False,,,,,True
+npm,eslint-config-prettier,10.1.7,True,False,,,,,True
+npm,eslint-config-prettier,8.10.1,True,False,,,,,True
+npm,eslint-config-prettier,9.1.1,True,False,,,,,True
+npm,eslint-config-teselagen,6.1.7,True,False,,,,,True
+npm,eslint-plugin-prettier,4.2.3,True,False,,,,,True
+npm,globalize-rpk,1.7.4,True,False,,,,,True
+npm,got-fetch,5.1.11,True,False,,,,,True
+npm,got-fetch,5.1.12,True,False,,,,,True
+npm,graphql-sequelize-teselagen,5.3.8,True,False,,,,,True
+npm,has-ansi,6.0.1,True,False,,,,,True
+npm,html-to-base64-image,1.0.2,True,False,,,,,True
+npm,is,3.3.1,True,False,,,,,True
+npm,is,5.0.0,True,False,,,,,True
+npm,is-arrayish,0.3.3,True,False,,,,,True
+npm,json-rules-engine-simplified,0.2.1,True,False,,,,,True
+npm,json-rules-engine-simplified,0.2.3,True,False,,,,,True
+npm,jumpgate,0.0.2,True,False,,,,,True
+npm,koa2-swagger-ui,5.11.1,True,False,,,,,True
+npm,koa2-swagger-ui,5.11.2,True,False,,,,,True
+npm,mcfly-semantic-release,1.3.1,True,False,,,,,True
+npm,mcp-knowledge-base,0.0.2,True,False,,,,,True
+npm,mcp-knowledge-graph,1.2.1,True,False,,,,,True
+npm,monorepo-next,13.0.1,True,False,,,,,True
+npm,monorepo-next,13.0.2,True,False,,,,,True
+npm,napi-postinstall,0.3.1,True,False,,,,,True
+npm,ng-imports-checker,0.0.9,True,False,,,,,True
+npm,ng2-file-upload,8.0.2,True,False,,,,,True
+npm,ng2-file-upload,8.0.3,True,False,,,,,True
+npm,ngx-bootstrap,20.0.5,True,False,,,,,True
+npm,ngx-bootstrap,20.0.6,True,False,,,,,True
+npm,ngx-color,10.0.1,True,False,,,,,True
+npm,ngx-color,10.0.2,True,False,,,,,True
+npm,ngx-toastr,19.0.1,True,False,,,,,True
+npm,ngx-toastr,19.0.2,True,False,,,,,True
+npm,ngx-trend,8.0.1,True,False,,,,,True
+npm,ngx-ws,1.1.5,True,False,,,,,True
+npm,ngx-ws,1.1.6,True,False,,,,,True
+npm,oradm-to-gql,35.0.14,True,False,,,,,True
+npm,oradm-to-sqlz,1.1.2,True,False,,,,,True
+npm,oradm-to-sqlz,1.1.4,True,False,,,,,True
+npm,ove-auto-annotate,0.0.10,True,False,,,,,True
+npm,ove-auto-annotate,0.0.9,True,False,,,,,True
+npm,pm2-gelf-json,1.0.4,True,False,,,,,True
+npm,pm2-gelf-json,1.0.5,True,False,,,,,True
+npm,react-complaint-image,0.0.32,True,False,,,,,True
+npm,react-complaint-image,0.0.34,True,False,,,,,True
+npm,react-jsonschema-form-conditionals,0.3.18,True,False,,,,,True
+npm,react-jsonschema-form-conditionals,0.3.20,True,False,,,,,True
+npm,react-jsonschema-form-extras,1.0.3,True,False,,,,,True
+npm,react-jsonschema-rxnt-extras,0.4.8,True,False,,,,,True
+npm,remark-preset-lint-crowdstrike,4.0.1,True,False,,,,,True
+npm,remark-preset-lint-crowdstrike,4.0.2,True,False,,,,,True
+npm,rxnt-authentication,0.0.3,True,False,,,,,True
+npm,rxnt-authentication,0.0.4,True,False,,,,,True
+npm,rxnt-authentication,0.0.5,True,False,,,,,True
+npm,rxnt-healthchecks-nestjs,1.0.2,True,False,,,,,True
+npm,rxnt-healthchecks-nestjs,1.0.3,True,False,,,,,True
+npm,rxnt-healthchecks-nestjs,1.0.4,True,False,,,,,True
+npm,rxnt-kue,1.0.4,True,False,,,,,True
+npm,rxnt-kue,1.0.5,True,False,,,,,True
+npm,rxnt-kue,1.0.6,True,False,,,,,True
+npm,simple-swizzle,0.2.3,True,False,,,,,True
+npm,slice-ansi,7.1.1,True,False,,,,,True
+npm,supports-hyperlinks,4.1.1,True,False,,,,,True
+npm,swc-plugin-component-annotate,1.9.1,True,False,,,,,True
+npm,swc-plugin-component-annotate,1.9.2,True,False,,,,,True
+npm,synckit,0.11.9,True,False,,,,,True
+npm,tbssnch,1.0.2,True,False,,,,,True
+npm,tg-client-query-builder,2.14.4,True,False,,,,,True
+npm,tg-redbird,1.3.1,True,False,,,,,True
+npm,tg-seq-gen,1.0.10,True,False,,,,,True
+npm,tg-seq-gen,1.0.9,True,False,,,,,True
+npm,thangved-react-grid,1.0.3,True,False,,,,,True
+npm,ts-gaussian,3.0.5,True,False,,,,,True
+npm,ts-gaussian,3.0.6,True,False,,,,,True
+npm,ts-imports,1.0.1,True,False,,,,,True
+npm,ts-imports,1.0.2,True,False,,,,,True
+npm,tvi-cli,0.1.5,True,False,,,,,True
+npm,vant,2.13.3,True,False,,,,,True
+npm,vant,2.13.4,True,False,,,,,True
+npm,vant,2.13.5,True,False,,,,,True
+npm,vant,3.6.13,True,False,,,,,True
+npm,vant,3.6.14,True,False,,,,,True
+npm,vant,4.9.12,True,False,,,,,True
+npm,vant,4.9.13,True,False,,,,,True
+npm,vant,4.9.14,True,False,,,,,True
+npm,ve-bamreader,0.2.6,True,False,,,,,True
+npm,ve-editor,1.0.1,True,False,,,,,True
+npm,verror-extra,6.0.1,True,False,,,,,True
+npm,voip-callkit,1.0.2,True,False,,,,,True
+npm,wdio-web-reporter,0.1.3,True,False,,,,,True
+npm,wrap-ansi,9.0.1,True,False,,,,,True
+npm,xrpl,2.14.2,True,False,,,,,True
+npm,xrpl,4.2.1,True,False,,,,,True
+npm,xrpl,4.2.2,True,False,,,,,True
+npm,xrpl,4.2.3,True,False,,,,,True
+npm,xrpl,4.2.4,True,False,,,,,True
+npm,xrpl,4.3.0,True,False,,,,,True
+npm,yargs-help-output,5.0.3,True,False,,,,,True
+npm,yoo-styles,6.0.326,True,False,,,,,True
+pypi,0-8,0.0.0.1,False,True,MAL-2025-2925,2025-03-28T13:05:11Z,2025-03-28T13:05:11Z,Malicious code in 0-8 (PyPI),True
+pypi,0x000testqwe,5.20.4,False,True,MAL-2025-6428,2025-07-31T19:13:52Z,2025-07-31T19:13:52Z,Malicious code in 0x000testqwe (PyPI),True
+pypi,123bla,0.0.1,False,True,MAL-2024-10238,2024-10-27T13:55:45Z,2024-10-27T13:55:45Z,Malicious code in 123bla (PyPI),True
+pypi,1337test,1,False,True,MAL-2024-4720,2024-06-25T13:32:02Z,2024-10-24T01:01:57Z,Malicious code in 1337test (PyPI),True
+pypi,18923aa,4.96,False,True,MAL-2024-4721,2024-06-25T13:32:02Z,2024-10-24T01:01:57Z,Malicious code in 18923aa (PyPI),True
+pypi,191239aa,10.87,False,True,MAL-2024-4722,2024-06-25T13:32:03Z,2024-10-24T01:01:57Z,Malicious code in 191239aa (PyPI),True
+pypi,1923tsl1,5.40,False,True,MAL-2024-4723,2024-06-25T13:32:03Z,2024-10-24T01:01:57Z,Malicious code in 1923tsl1 (PyPI),True
+pypi,233-misc,0.0.3,False,True,MAL-2024-4724,2024-06-25T13:32:04Z,2024-10-24T01:01:57Z,Malicious code in 233-misc (PyPI),True
+pypi,3-0,0.0.0.1,False,True,MAL-2025-2926,2025-03-28T13:05:12Z,2025-03-28T13:05:12Z,Malicious code in 3-0 (PyPI),True
+pypi,3m-promo-gen-api,1.0,False,True,MAL-2024-4725,2024-06-25T13:32:04Z,2024-10-24T01:01:57Z,Malicious code in 3m-promo-gen-api (PyPI),True
+pypi,3m-promo-link-gen,1.0,False,True,MAL-2024-4726,2024-06-25T13:32:05Z,2024-10-24T01:01:57Z,Malicious code in 3m-promo-link-gen (PyPI),True
+pypi,3web,1.0.0,False,True,MAL-2024-9933,2024-10-16T13:48:57Z,2024-10-16T13:48:57Z,Malicious code in 3web (PyPI),True
+pypi,3web-py,1.0.0,False,True,MAL-2024-9934,2024-10-16T13:48:57Z,2024-10-16T13:48:57Z,Malicious code in 3web-py (PyPI),True
+pypi,4123,1,False,True,MAL-2024-4727,2024-06-25T13:32:05Z,2024-10-24T01:01:57Z,Malicious code in 4123 (PyPI),True
+pypi,48484efej8id,0.1,False,True,MAL-2024-11512,2024-12-09T06:49:39Z,2024-12-09T06:49:39Z,Malicious code in 48484efej8id (PyPI),True
+pypi,7-0,0.0.0.1,False,True,MAL-2025-2927,2025-03-28T13:05:12Z,2025-03-28T13:05:12Z,Malicious code in 7-0 (PyPI),True
+pypi,90456984689490856,0,False,True,MAL-2024-4728,2024-06-25T13:32:06Z,2024-10-24T01:01:57Z,Malicious code in 90456984689490856 (PyPI),True
+pypi,a1rn,0.1.0,False,True,MAL-2024-4729,2024-06-25T13:32:06Z,2024-10-24T01:01:57Z,Malicious code in a1rn (PyPI),True
+pypi,a1rn,0.1.2,False,True,MAL-2024-4729,2024-06-25T13:32:06Z,2024-10-24T01:01:57Z,Malicious code in a1rn (PyPI),True
+pypi,a1rn,0.1.4,False,True,MAL-2024-4729,2024-06-25T13:32:06Z,2024-10-24T01:01:57Z,Malicious code in a1rn (PyPI),True
+pypi,abilityrequests,0.0.5,False,True,MAL-2025-41615,2025-08-28T07:10:35Z,2025-08-28T07:10:35Z,Malicious code in abilityrequests (PyPI),True
+pypi,abilityrequests,0.0.6,False,True,MAL-2025-41615,2025-08-28T07:10:35Z,2025-08-28T07:10:35Z,Malicious code in abilityrequests (PyPI),True
+pypi,acapy-agent-didx,0.0.0.1,False,True,MAL-2025-2928,2025-03-28T13:05:13Z,2025-03-28T13:05:13Z,Malicious code in acapy-agent-didx (PyPI),True
+pypi,account-eth,0.7.0,False,True,MAL-2025-898,2025-02-03T17:07:06Z,2025-02-03T17:07:06Z,Malicious code in account-eth (PyPI),True
+pypi,account-eth,0.7.1,False,True,MAL-2025-898,2025-02-03T17:07:06Z,2025-02-03T17:07:06Z,Malicious code in account-eth (PyPI),True
+pypi,acloud-client,1.0.0,False,True,MAL-2025-2929,2025-03-28T13:05:14Z,2025-09-26T11:06:46Z,Malicious code in acloud-client (PyPI),True
+pypi,acloud-client,1.0.1,False,True,MAL-2025-2929,2025-03-28T13:05:14Z,2025-09-26T11:06:46Z,Malicious code in acloud-client (PyPI),True
+pypi,adafruit-imageload,1.0.0,False,True,MAL-2024-9935,2024-10-16T13:49:00Z,2024-10-16T13:49:00Z,Malicious code in adafruit-imageload (PyPI),True
+pypi,adanbu,92.6,False,True,MAL-2024-10578,2024-11-12T03:26:14Z,2024-11-12T03:26:14Z,Malicious code in adanbu (PyPI),True
+pypi,adandu,92.6,False,True,MAL-2024-10579,2024-11-12T03:26:05Z,2024-11-12T03:26:05Z,Malicious code in adandu (PyPI),True
+pypi,adandv,912.6,False,True,MAL-2024-10580,2024-11-12T03:26:07Z,2024-11-12T03:26:07Z,Malicious code in adandv (PyPI),True
+pypi,adm3,1.8.0,False,True,MAL-2024-4730,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in adm3 (PyPI),True
+pypi,adm4,1.9.0,False,True,MAL-2024-4731,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in adm4 (PyPI),True
+pypi,admcheck,0.0.1,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,0.0.2,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,0.0.3,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,0.0.4,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,0.0.5,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,0.0.7,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,0.0.8,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,0.0.9,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,1.0.0,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,1.1.0,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,1.2.0,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,1.3.0,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,1.4.0,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck,1.5.0,False,True,MAL-2024-4732,2024-06-25T13:32:07Z,2024-10-24T01:01:57Z,Malicious code in admcheck (PyPI),True
+pypi,admcheck2,1.7.0,False,True,MAL-2024-4733,2024-06-25T13:32:08Z,2024-10-24T01:01:57Z,Malicious code in admcheck2 (PyPI),True
+pypi,adv2099m,1.0.0,False,True,MAL-2024-4734,2024-06-25T13:32:08Z,2024-10-24T01:01:57Z,Malicious code in adv2099m (PyPI),True
+pypi,adv2099m2,1.0.0,False,True,MAL-2024-4735,2024-06-25T13:32:09Z,2024-10-24T01:01:57Z,Malicious code in adv2099m2 (PyPI),True
+pypi,adv2099m3,1.0.0,False,True,MAL-2024-4736,2024-06-25T13:32:09Z,2024-10-24T01:01:57Z,Malicious code in adv2099m3 (PyPI),True
+pypi,adv2099m4,1.0.0,False,True,MAL-2024-4737,2024-06-25T13:32:10Z,2024-10-24T01:01:57Z,Malicious code in adv2099m4 (PyPI),True
+pypi,adv2099m5,1.0.0,False,True,MAL-2024-4738,2024-06-25T13:32:10Z,2024-10-24T01:01:57Z,Malicious code in adv2099m5 (PyPI),True
+pypi,adv2099m6,1.0.0,False,True,MAL-2024-4739,2024-06-25T13:32:11Z,2024-10-24T01:01:57Z,Malicious code in adv2099m6 (PyPI),True
+pypi,adv2099m7,1.0.0,False,True,MAL-2024-4740,2024-06-25T13:32:11Z,2024-10-24T01:01:57Z,Malicious code in adv2099m7 (PyPI),True
+pypi,aeodata,0.4,False,True,MAL-2024-4741,2024-06-25T13:32:12Z,2024-10-24T01:01:57Z,Malicious code in aeodata (PyPI),True
+pypi,aeodatav04,0.4,False,True,MAL-2024-4742,2024-06-25T13:32:12Z,2024-10-24T01:01:57Z,Malicious code in aeodatav04 (PyPI),True
+pypi,affinequant,99.6,False,True,MAL-2024-10832,2024-11-19T07:10:50Z,2024-11-19T07:10:50Z,Malicious code in affinequant (PyPI),True
+pypi,afrit-name,1.3,False,True,MAL-2024-11513,2024-12-09T06:49:40Z,2024-12-09T06:49:40Z,Malicious code in afrit-name (PyPI),True
+pypi,afrit-name,1.4,False,True,MAL-2024-11513,2024-12-09T06:49:40Z,2024-12-09T06:49:40Z,Malicious code in afrit-name (PyPI),True
+pypi,afrit-name,1.5,False,True,MAL-2024-11513,2024-12-09T06:49:40Z,2024-12-09T06:49:40Z,Malicious code in afrit-name (PyPI),True
+pypi,afriton,1.5,False,True,MAL-2024-11514,2024-12-09T06:49:40Z,2024-12-09T06:49:40Z,Malicious code in afriton (PyPI),True
+pypi,afriton,1.6,False,True,MAL-2024-11514,2024-12-09T06:49:40Z,2024-12-09T06:49:40Z,Malicious code in afriton (PyPI),True
+pypi,afriton-py,1.6,False,True,MAL-2024-11515,2024-12-09T06:49:41Z,2024-12-09T06:49:41Z,Malicious code in afriton-py (PyPI),True
+pypi,afriton-py,1.7,False,True,MAL-2024-11515,2024-12-09T06:49:41Z,2024-12-09T06:49:41Z,Malicious code in afriton-py (PyPI),True
+pypi,afritonpy,1,False,True,MAL-2024-11516,2024-12-09T06:49:41Z,2024-12-09T06:49:41Z,Malicious code in afritonpy (PyPI),True
+pypi,agent-user-generate,1.6.7,False,True,MAL-2024-11517,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in agent-user-generate (PyPI),True
+pypi,agents-kit,0.0.0.1,False,True,MAL-2025-2930,2025-03-28T13:05:15Z,2025-03-28T13:05:15Z,Malicious code in agents-kit (PyPI),True
+pypi,ai-labs-snippets-sdk,0.1.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,1.1.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,1.2.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,2.0.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,2.2.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,3.0.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,3.2.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,3.3.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,3.4.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,3.5.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,4.0.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-labs-snippets-sdk,4.4.0,False,True,MAL-2025-5094,2025-06-18T10:15:00Z,2025-06-18T10:15:00Z,Malicious code in ai-labs-snippets-sdk (PyPI),True
+pypi,ai-solver-gen,1.0,False,True,MAL-2024-4743,2024-06-25T13:32:13Z,2024-10-24T01:01:57Z,Malicious code in ai-solver-gen (PyPI),True
+pypi,ai-solver-images,1.0,False,True,MAL-2024-4744,2024-06-25T13:32:13Z,2024-10-24T01:01:57Z,Malicious code in ai-solver-images (PyPI),True
+pypi,ai-solver-py,1.0,False,True,MAL-2024-4745,2024-06-25T13:32:13Z,2024-10-24T01:01:57Z,Malicious code in ai-solver-py (PyPI),True
+pypi,aicreator,0.0.1,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.2,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.3,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.4,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.5,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.6,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.7,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.8,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.0.9,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.0,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.1,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.2,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.3,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.5,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.6,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.7,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.8,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.1.9,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.2.0,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.2.1,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.2.2,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.2.3,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.2.4,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreator,0.2.5,False,True,MAL-2024-4746,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreator (PyPI),True
+pypi,aicreatorpack,0.0.1,False,True,MAL-2024-4747,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreatorpack (PyPI),True
+pypi,aicreatorpack,0.0.3,False,True,MAL-2024-4747,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreatorpack (PyPI),True
+pypi,aicreatorpack,0.0.4,False,True,MAL-2024-4747,2024-06-25T13:32:14Z,2024-10-24T01:01:57Z,Malicious code in aicreatorpack (PyPI),True
+pypi,aicreatorpackage,0.0.1,False,True,MAL-2024-4748,2024-06-25T13:32:15Z,2024-10-24T01:01:57Z,Malicious code in aicreatorpackage (PyPI),True
+pypi,aietelegram,0.3,False,True,MAL-2024-4749,2024-06-25T13:32:16Z,2024-10-24T01:01:57Z,Malicious code in aietelegram (PyPI),True
+pypi,ailyboostbot,1.0,False,True,MAL-2024-4750,2024-06-25T13:32:16Z,2024-10-24T01:01:57Z,Malicious code in ailyboostbot (PyPI),True
+pypi,ailynitro,1.0,False,True,MAL-2024-4751,2024-06-25T13:32:16Z,2024-10-24T01:01:57Z,Malicious code in ailynitro (PyPI),True
+pypi,ailzyn1tr0,1.0,False,True,MAL-2024-4752,2024-06-25T13:32:17Z,2024-10-24T01:01:57Z,Malicious code in ailzyn1tr0 (PyPI),True
+pypi,ailzynitro,1.0,False,True,MAL-2024-4753,2024-06-25T13:32:17Z,2024-10-24T01:01:57Z,Malicious code in ailzynitro (PyPI),True
+pypi,aio-http-proxy-support,1.0,False,True,MAL-2024-4754,2024-06-25T13:32:18Z,2024-10-24T01:01:57Z,Malicious code in aio-http-proxy-support (PyPI),True
+pypi,aio5,0.2.9,False,True,MAL-2024-4755,2024-06-25T13:32:18Z,2024-10-24T01:01:57Z,Malicious code in aio5 (PyPI),True
+pypi,aio6,6.6.6,False,True,MAL-2024-4756,2024-06-25T13:32:19Z,2024-10-24T01:01:57Z,Malicious code in aio6 (PyPI),True
+pypi,aioasyncsqlite,1.0.0,False,True,MAL-2025-4203,2025-05-22T12:33:24Z,2025-05-22T12:33:24Z,Malicious code in aioasyncsqlite (PyPI),True
+pypi,aiocpa,0.1.13,False,True,MAL-2024-11518,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in aiocpa (PyPI),True
+pypi,aiocpa,0.1.14,False,True,MAL-2024-11518,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in aiocpa (PyPI),True
+pypi,aiogt,1.0.0,False,True,MAL-2024-9936,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiogt (PyPI),True
+pypi,aiogt,1.0.0.post1,False,True,MAL-2024-9936,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiogt (PyPI),True
+pypi,aiogt,1.0.0rc1,False,True,MAL-2024-9936,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiogt (PyPI),True
+pypi,aiogt,1.0.0rc2,False,True,MAL-2024-9936,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiogt (PyPI),True
+pypi,aiohttp-libscss,0.23.0,False,True,MAL-2024-9937,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiohttp-libscss (PyPI),True
+pypi,aiohttp-libscss,0.23.1,False,True,MAL-2024-9937,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiohttp-libscss (PyPI),True
+pypi,aiohttp-libscss,0.23.2,False,True,MAL-2024-9937,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiohttp-libscss (PyPI),True
+pypi,aiohttp-libscss,0.24.0,False,True,MAL-2024-9937,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiohttp-libscss (PyPI),True
+pypi,aiohttp-libscss,0.25.0,False,True,MAL-2024-9937,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiohttp-libscss (PyPI),True
+pypi,aiohttp-libscss,0.26.0,False,True,MAL-2024-9937,2024-10-16T14:36:16Z,2024-10-16T14:36:16Z,Malicious code in aiohttp-libscss (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.15,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.21,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.22,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.28,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.35,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.46,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.53,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.56,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-connector,0.2.57,False,True,MAL-2025-41616,2025-08-28T07:10:36Z,2025-08-28T07:10:36Z,Malicious code in aiohttp-proxies-connector (PyPI),True
+pypi,aiohttp-proxies-fork,0.1.62,False,True,MAL-2025-41617,2025-08-28T07:10:37Z,2025-08-28T07:10:37Z,Malicious code in aiohttp-proxies-fork (PyPI),True
+pypi,aiohttp-proxies-forked,0.1.65,False,True,MAL-2025-41618,2025-08-28T07:10:37Z,2025-08-28T07:10:37Z,Malicious code in aiohttp-proxies-forked (PyPI),True
+pypi,aiolitesql,0.21.0,False,True,MAL-2025-4204,2025-05-22T12:33:24Z,2025-05-22T12:33:24Z,Malicious code in aiolitesql (PyPI),True
+pypi,aiopbotocore,0.1,False,True,MAL-2024-11519,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in aiopbotocore (PyPI),True
+pypi,aiopbotocore,0.1.0,False,True,MAL-2024-11519,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in aiopbotocore (PyPI),True
+pypi,aiopbotocore,0.3,False,True,MAL-2024-11519,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in aiopbotocore (PyPI),True
+pypi,aiopbotocore,0.6.0,False,True,MAL-2024-11519,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in aiopbotocore (PyPI),True
+pypi,aiopbotocore,0.9.0,False,True,MAL-2024-11519,2024-12-09T06:49:42Z,2024-12-09T06:49:42Z,Malicious code in aiopbotocore (PyPI),True
+pypi,aiosignalasync,0.1,False,True,MAL-2025-2931,2025-03-28T13:05:15Z,2025-03-28T13:05:15Z,Malicious code in aiosignalasync (PyPI),True
+pypi,aiosignalasync,0.2,False,True,MAL-2025-2931,2025-03-28T13:05:15Z,2025-03-28T13:05:15Z,Malicious code in aiosignalasync (PyPI),True
+pypi,aiosignalasync,0.3,False,True,MAL-2025-2931,2025-03-28T13:05:15Z,2025-03-28T13:05:15Z,Malicious code in aiosignalasync (PyPI),True
+pypi,aiosync,0.0.1,False,True,MAL-2024-4757,2024-06-25T13:32:19Z,2024-10-24T01:01:57Z,Malicious code in aiosync (PyPI),True
+pypi,aiosync,0.0.3,False,True,MAL-2024-4757,2024-06-25T13:32:19Z,2024-10-24T01:01:57Z,Malicious code in aiosync (PyPI),True
+pypi,aiosync,0.0.5,False,True,MAL-2024-4757,2024-06-25T13:32:19Z,2024-10-24T01:01:57Z,Malicious code in aiosync (PyPI),True
+pypi,aiosync,0.0.7,False,True,MAL-2024-4757,2024-06-25T13:32:19Z,2024-10-24T01:01:57Z,Malicious code in aiosync (PyPI),True
+pypi,aiosync,0.0.8,False,True,MAL-2024-4757,2024-06-25T13:32:19Z,2024-10-24T01:01:57Z,Malicious code in aiosync (PyPI),True
+pypi,aiotrans,1,False,True,MAL-2024-9938,2024-10-16T14:36:17Z,2024-10-16T14:36:17Z,Malicious code in aiotrans (PyPI),True
+pypi,aiotrans,1.0.0rc1,False,True,MAL-2024-9938,2024-10-16T14:36:17Z,2024-10-16T14:36:17Z,Malicious code in aiotrans (PyPI),True
+pypi,aiotrans,1.0.0rc2,False,True,MAL-2024-9938,2024-10-16T14:36:17Z,2024-10-16T14:36:17Z,Malicious code in aiotrans (PyPI),True
+pypi,aiotrans,1.1,False,True,MAL-2024-9938,2024-10-16T14:36:17Z,2024-10-16T14:36:17Z,Malicious code in aiotrans (PyPI),True
+pypi,aiotrans,1.2,False,True,MAL-2024-9938,2024-10-16T14:36:17Z,2024-10-16T14:36:17Z,Malicious code in aiotrans (PyPI),True
+pypi,aiphttp,0.0.0.1,False,True,MAL-2025-2932,2025-03-28T13:05:16Z,2025-03-28T13:05:16Z,Malicious code in aiphttp (PyPI),True
+pypi,airduq,1.0,False,True,MAL-2024-4758,2024-06-25T13:32:20Z,2024-10-24T01:01:57Z,Malicious code in airduq (PyPI),True
+pypi,airnitro,1.0,False,True,MAL-2024-4759,2024-06-25T13:32:20Z,2024-10-24T01:01:57Z,Malicious code in airnitro (PyPI),True
+pypi,airtime-media-monitor,1.0,False,True,MAL-2025-41619,2025-08-28T07:10:38Z,2025-08-28T07:10:38Z,Malicious code in airtime-media-monitor (PyPI),True
+pypi,aistac-foundation,0.0.1,False,True,MAL-2025-6429,2025-07-31T19:13:54Z,2025-07-31T19:13:54Z,Malicious code in aistac-foundation (PyPI),True
+pypi,akangatu,0.0.0.1,False,True,MAL-2025-2933,2025-03-28T13:05:17Z,2025-04-28T05:47:10Z,Malicious code in akangatu (PyPI),True
+pypi,akangatu,0.20.12a0,False,True,MAL-2025-2933,2025-03-28T13:05:17Z,2025-04-28T05:47:10Z,Malicious code in akangatu (PyPI),True
+pypi,akangatu,0.3,False,True,MAL-2025-2933,2025-03-28T13:05:17Z,2025-04-28T05:47:10Z,Malicious code in akangatu (PyPI),True
+pypi,akatest,0.2,False,True,MAL-2025-1961,2025-03-03T13:44:36Z,2025-03-03T13:44:36Z,Malicious code in akatest (PyPI),True
+pypi,akatest,0.3,False,True,MAL-2025-1961,2025-03-03T13:44:36Z,2025-03-03T13:44:36Z,Malicious code in akatest (PyPI),True
+pypi,akatest,0.4,False,True,MAL-2025-1961,2025-03-03T13:44:36Z,2025-03-03T13:44:36Z,Malicious code in akatest (PyPI),True
+pypi,akh-py,0.0.1,False,True,MAL-2024-11520,2024-12-09T06:49:43Z,2024-12-09T06:49:43Z,Malicious code in akh-py (PyPI),True
+pypi,akobo,0.0.4,False,True,MAL-2024-11521,2024-12-09T06:49:44Z,2024-12-09T06:49:44Z,Malicious code in akobo (PyPI),True
+pypi,num2words,0.5.15,True,False,,,,,True
+pypi,num2words,0.5.16,True,False,,,,,True
+pypi,ultralytics,8.3.41,True,False,,,,,True
+pypi,ultralytics,8.3.42,True,False,,,,,True
+pypi,ultralytics,8.3.45,True,False,,,,,True
+pypi,ultralytics,8.3.46,True,False,,,,,True
