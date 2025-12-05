@@ -1,4 +1,5 @@
-# Still in: ~/Desktop/"CSI 4900 Jupyter"/data/external
+# When running make sure in directory /Jupyter_v2/data/external
+# the needed folders are NPM and PyPI, other folders for different ecosystems can be deleted of ignored
 
 # 1) Download tarball of the repo
 TMP_TAR="$(mktemp /tmp/ossf-malpkgs-XXXXXX.tar.gz)"
