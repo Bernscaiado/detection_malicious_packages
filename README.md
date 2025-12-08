@@ -211,8 +211,6 @@ Conceptually, this notebook does:
 
 ## 2. Directory / File Guide
 
-*(Adjust names if they differ in your repo)*
-
 * `data/`
 
   * `meta/`
