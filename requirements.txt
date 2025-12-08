@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+joblib
+requests
+packaging
+matplotlib
+
+# For running / editing the original notebooks (optional)
+jupyterlab
+ipykernel
