@@ -232,13 +232,7 @@ Conceptually, this notebook does:
   * `new_features_v4.html`
     Feature refinement + final transition model and scoring helper.
 
-* `models/`
-
-  * `clf_transition.joblib` (or similar) – serialized v4 classifier.
-  * `feature_cols_transition.json` – list of selected feature names for scoring.
-
 * `README.md`
-  (This file.)
 
 ---
 
@@ -297,7 +291,7 @@ To score a transition you need:
    * Internal dependency dashboards.
    * Offline batch scoring for threat-hunting.
 
-Thresholds should be tuned based on your risk tolerance and class imbalance (malicious transitions are rare).
+Thresholds should be tuned based on your risk tolerance and class imbalance.
 
 ---
 
@@ -322,8 +316,6 @@ Install via:
 ```bash
 pip install -r requirements.txt
 ```
-
-*(Add a `requirements.txt` derived from the notebooks.)*
 
 ### 4.2 Recommended run order
 
