@@ -374,4 +374,13 @@ This project provides a **lightweight, registry-driven early warning system** fo
 * v3 constructs a clean **delta-only transition table**.
 * v4 refines features and trains a **final transition classifier** with a simple scoring API.
 
-Everything is driven by the attached HTML notebooks and their underlying CSV/serialized artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
+v4’s model got better mainly because it added smarter delta features on top of v3:
+Unified size deltas/ratios across PyPI + npm → one clean “how much did this release change in size?” signal.
+* Density / bytes-per-file proxies → catch packages that suddenly become much denser/packed.
+* Log-magnitude + sign features for big jumps → model sees how big the change is and in which direction (grow vs shrink) without being skewed by outliers.
+* Large-jump boolean flags → crisp “this change was huge” indicators that trees love.
+* Automatic feature selection over both old v3 deltas and the new ones → keeps the strongest ~30 signals.
+* Net effect: the model is more sensitive to suspicious size, density, and structural shifts between versions, while being more robust across ecosystems.
+
+
+Everything is driven by the attached Python notebooks and their underlying CSV/serialized artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
