@@ -2,7 +2,9 @@
 
 This project builds an end-to-end pipeline to detect **malicious version transitions** in open-source ecosystems (PyPI, npm) using **registry metadata** and **version-to-version delta features** only.
 
-Given a **known good (benign) version** of a package and a **candidate next version**, the final model predicts the probability that the transition is **malicious vs benign**, based purely on:
+The v4 “all transitions” model is trained on every version-to-version jump in the delta table and reaches 0.81 accuracy. For benign transitions, precision/recall are 0.86/0.84; for malicious transitions they are 0.73/0.77. The confusion matrix [[76 15], [12 41]] means 76/91 benign transitions are correctly kept benign, 41/53 malicious transitions are correctly flagged, and benign false positives are held to about 16% (15/91). Unlike the earlier benign→malicious v3 model, which only considered upgrades from a known-good baseline, v4 learns over the full mix of transition types, which is closer to real registry monitoring. Even under this harder, more realistic setting, it still attains 0.77 recall on malicious and 0.84 recall on benign transitions.
+
+Given a **known good (benign) or unknown version** of a package and a **candidate next version**, the final model predicts the probability that the transition is **malicious vs benign**, based purely on:
 
 * How static metadata changes between versions (sizes, file counts, etc.)
 * Simple ratio / “entropy-proxy” features (bytes per file, size ratios, etc.)
