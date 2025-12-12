@@ -383,7 +383,7 @@ Examples between version A → B:
    * Number of files jumps or drops a lot
    * New big bundled blob appears (e.g., one huge .js instead of many small ones)
 2. Density
-   * Same file count but way more bytes per file (your bytes-per-file proxies)
+   * Same file count but way more bytes per file (bytes-per-file proxies)
 4. Metadata / config
   * delta_num_scripts spikes (new npm scripts like postinstall, preinstall)
   * delta_num_dependencies / delta_num_dev_dependencies change sharply
