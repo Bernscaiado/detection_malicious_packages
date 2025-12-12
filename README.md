@@ -319,12 +319,14 @@ pip install -r requirements.txt
 
 ### 4.2 Recommended run order
 
+NOTE: You don’t need to run v0 or v3. Notebook v4 can run independently as long as the two input .csv files are present on the machine and the file paths are configured correctly.
+
 1. **Build labels (if needed)**
-   Run the logic in `refactored_build_labels_v0.html` to regenerate
+   Run the logic in `refactored_build_labels_v0.ipynb` to regenerate
    `labels_package.csv` and `labels_version.csv`.
 
 2. **Build delta table**
-   Run `version_diff_live_registries_v3.html` (or its Python equivalent) to:
+   Run `version_diff_live_registries_v3.ipynb` to:
 
    * Load per-version static metadata.
    * Merge with `labels_version.csv`.
@@ -332,15 +334,13 @@ pip install -r requirements.txt
    * Write `version_delta_features_live.csv`.
 
 3. **Train / update final model**
-   Run `new_features_v4.html`:
+   Run `new_features_v4.ipynb`:
 
    * Load delta table.
    * Apply feature selection.
    * Train `clf_transition`.
-   * Save `clf_transition.joblib` and `feature_cols_transition.json`.
 
-4. **Use the model**
-   Import `score_transition_from_known_good` and integrate it into your tooling.
+4. **Use the model**.
 
 ---
 
