@@ -26,7 +26,9 @@ The project is organized into three main Jupyter notebooks that mirror the pipel
 
 This notebook:
 
-* Ingests raw OSV / OpenSSF malicious package data and other sources.
+* Ingests raw OSV / OpenSSF malicious package data, Data Dod, NPM and PyPI package registries:
+* https://github.com/ossf/malicious-packages
+* https://github.com/DataDog/malicious-software-packages-dataset
 * Normalizes records into:
 
   * `labels_package.csv` – package-level label (e.g., *ever malicious*, ecosystem, etc.).
