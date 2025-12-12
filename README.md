@@ -10,17 +10,17 @@ Given a **known good (benign) or unknown version** of a package and a **candidat
 * Simple ratio / “entropy-proxy” features (bytes per file, size ratios, etc.)
 * Text/metadata deltas (description length, classifiers, dependencies, etc.)
 
-The project is organized into three main Jupyter notebooks (exported as HTML) that mirror the pipeline:
+The project is organized into three main Jupyter notebooks that mirror the pipeline:
 
-* `refactored_build_labels_v0.html` – build clean package & version labels
-* `version_diff_live_registries_v3.html` – construct version-to-version delta table
-* `new_features_v4.html` – refine features and train the final transition model
+* `refactored_build_labels_v0.ipynb` – build clean package & version labels
+* `version_diff_live_registries_v3.ipynb` – construct version-to-version delta table
+* `new_features_v4.ipynb` – refine features and train the final transition model
 
 ---
 
 ## 1. Pipeline Overview
 
-### Step 0 – Labels & Ground Truth (`refactored_build_labels_v0.html`)
+### Step 0 – Labels & Ground Truth (`refactored_build_labels_v0.ipynb`)
 
 **Goal:** Build consistent labels at **package** and **version** levels.
 
@@ -41,7 +41,7 @@ These CSV outputs are the **only inputs** required by later notebooks for labels
 
 ---
 
-### Step 1 – Version-to-Version Delta Table (`version_diff_live_registries_v3.html`)
+### Step 1 – Version-to-Version Delta Table (`version_diff_live_registries_v3.ipynb`)
 
 **Goal:** Convert per-version metadata into **transitions** and compute deltas.
 
@@ -105,7 +105,7 @@ The output of this notebook is a **pure delta table** (often stored as something
 
 ---
 
-### Step 2 – Feature Refinement & Final Model (`new_features_v4.html`)
+### Step 2 – Feature Refinement & Final Model (`new_features_v4.ipynb`)
 
 **Goal:** Build a **clean v4 transition model** that:
 
@@ -118,7 +118,6 @@ Conceptually, this notebook does:
 1. **Load delta table**
 
    * Import the v3 delta CSV (e.g., `version_delta_features_live.csv`).
-   * Filter to transitions where the **previous version is benign** (known-good baseline).
 
 2. **Curate and expand feature set**
 
@@ -181,17 +180,17 @@ Conceptually, this notebook does:
      * Catching true malicious transitions (recall)
      * Avoiding false positives (precision/null impact on developers).
 
-5. **Scoring helper – `score_transition_from_known_good`**
+5. **Scoring helper – `score_transition`**
 
    v4 defines a small helper to make the model easy to use in tooling:
 
    ```python
-   p_mal = score_transition_from_known_good(
+   p_mal = score_transition(
        model=clf_transition,
        df_delta=delta_df,
        ecosystem="npm",
        package_name="left-pad",
-       base_version="1.1.0",   # known good
+       base_version="1.1.0",   # previous version
        next_version="1.1.1",   # candidate
        feature_cols=selected_features,
    )
@@ -223,13 +222,13 @@ Conceptually, this notebook does:
 
     * `version_delta_features_live.csv` – v3 delta-only transition table.
 
-* `notebooks/` (or root as HTML exports)
+* `notebooks/` 
 
-  * `refactored_build_labels_v0.html`
+  * `refactored_build_labels_v0.ipynb`
     Label construction and cleaning.
-  * `version_diff_live_registries_v3.html`
+  * `version_diff_live_registries_v3.ipynb`
     Builds the per-transition delta table and basic baselines.
-  * `new_features_v4.html`
+  * `new_features_v4.ipynb`
     Feature refinement + final transition model and scoring helper.
 
 * `README.md`
