@@ -35,7 +35,7 @@ Jupyter_v2/
 │       ├── labels_version.csv                    # Version-level labels (partial-data)
 │       ├── labels_version_v1.csv                 # Version-level labels (full-data)
 │       ├── version_delta_features_live.csv       # Delta transition table (v3 output)
-│       ├── version_delta_features_v4.csv         # Enhanced delta features (v4)
+│       ├── version_delta_features_v4.csv         # Enhanced delta features (v4 output)
 │       └── selected_delta_features_v4.csv        # Selected features for final model
 ├── notebooks/
 │   ├── refactored_build_labels_v0.ipynb          # Label construction and cleaning
