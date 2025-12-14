@@ -362,21 +362,35 @@ v4's model improved over v3 by adding smarter delta features:
 
 ## Summary
 
+
 This project provides a **lightweight, registry-driven early warning system** for suspicious package upgrades:
 
-* **v0** builds robust labels from OSSF and DataDog datasets
-* **v3** constructs a clean delta-only transition table
-* **v4** refines features and trains a final transition classifier with a simple scoring API
+* v0 builds robust labels.
+* v3 constructs a clean **delta-only transition table**.
+* v4 refines features and trains a **final transition classifier** with a simple scoring API.
 
-Everything is driven by Python notebooks and CSV artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
+v4’s model got better mainly because it added smarter delta features on top of v3:
+Unified size deltas/ratios across PyPI + npm → one clean “how much did this release change in size?” signal.
+* Density / bytes-per-file proxies → catch packages that suddenly become much denser/packed.
+* Log-magnitude + sign features for big jumps → model sees how big the change is and in which direction (grow vs shrink) without being skewed by outliers.
+* Large-jump boolean flags → crisp “this change was huge” indicators that trees love.
+* Automatic feature selection over both old v3 deltas and the new ones → keeps the strongest ~30 signals.
+* Net effect: the model is more sensitive to suspicious size, density, and structural shifts between versions, while being more robust across ecosystems.
 
----
+In this notebook context, “structural shifts” = big changes in how the package is put together, not just how big it is.
+Examples between version A → B:
+1. Files & layout
+   * Number of files jumps or drops a lot
+   * New big bundled blob appears (e.g., one huge .js instead of many small ones)
+2. Density
+   * Same file count but way more bytes per file (bytes-per-file proxies)
+4. Metadata / config
+  * delta_num_scripts spikes (new npm scripts like postinstall, preinstall)
+  * delta_num_dependencies / delta_num_dev_dependencies change sharply
+  * delta_num_classifiers / delta_num_keywords change in odd ways
+4. Version / release pattern
+  * Weird version bump pattern (delta_version_len, delta_version_num_dots, prerelease flags)
 
-## Getting Help
+Those features are all trying to say: “the internal structure and wiring of this package changed a lot in one jump" which is often what happens when someone injects malicious logic.
 
-For questions or issues:
-
-1. Check notebook comments and markdown cells for detailed explanations
-2. Review `data/meta/` CSV files to understand data structure
-3. Examine feature engineering code in `new_features_v4.ipynb`
-4. Verify file paths match your local setup
+Everything is driven by the attached Python notebooks and their underlying CSV/serialized artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
