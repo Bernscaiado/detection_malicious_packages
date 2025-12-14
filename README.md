@@ -139,55 +139,91 @@ Jupyter_v2/
 
 ---
 
-## How to Use the Model
+## How to Use the Model (v4)
 
-### Inputs Required
+### Inputs / Files
 
-* `ecosystem` – `"npm"` or `"pypi"`
-* `package_name` – Canonical package name
-* `base_version` – Known benign version (baseline)
-* `next_version` – Candidate version to evaluate
-* `clf_all` – Loaded scikit-learn model
-* `delta_df` – Delta table with selected features
-* `feature_cols` – List of selected features
+You need:
 
-### Usage Pattern
+* `data/meta/version_delta_features_v4.csv` (the delta-feature table)
+
+  * must include: `ecosystem`, `package_name`, `prev_version`, `version`
+  * must include all columns in `selected_features`
+  * typically includes the label column `y_malicious` (current-version label per transition)
+* `data/meta/selected_delta_features_v4.csv` (one column: `selected_feature`)
+* A trained scikit-learn classifier (e.g., `clf_all`), either trained in-notebook or loaded from disk.
+
+### Helper: score a single version-to-version transition
+
+`score_transition(...)` wraps a trained classifier + the delta table to return:
+
+**P(malicious)** for: `ecosystem:package_name base_version → next_version`
+
+What it does:
+
+* Finds the **single** matching row in `df_delta` where:
+
+  * `ecosystem == ecosystem`
+  * `package_name == package_name`
+  * `prev_version == base_version`
+  * `version == next_version`
+* Extracts only `feature_cols`, fills missing with `0`
+* Calls `model.predict_proba(...)` and returns the probability for class `1` (malicious)
+* Raises `ValueError` if the transition row is missing (so you catch gaps in your delta table early)
+
+### Example usage
 
 ```python
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
-# Load delta table (generated from v3 notebook)
-delta_df = pd.read_csv("data/meta/version_delta_features_live.csv")
+# Load v4 delta table + selected features
+delta_df = pd.read_csv("data/meta/version_delta_features_v4.csv")
+selected_features = pd.read_csv(
+    "data/meta/selected_delta_features_v4.csv"
+)["selected_feature"].tolist()
 
-# Load selected features (generated from v4 notebook)
-selected_features_df = pd.read_csv("data/meta/selected_delta_features_v4.csv")
-selected_features = selected_features_df['selected_feature'].tolist()
-
-# Train model (or load pre-trained model)
-# This example shows training - in production you'd load a saved model
+# Train (or load) a classifier
 X = delta_df[selected_features].fillna(0)
-y = delta_df['label_malicious']
+y = delta_df["y_malicious"].astype(int)
 
-clf_all = RandomForestClassifier(n_estimators=100, random_state=42)
+clf_all = RandomForestClassifier(n_estimators=200, random_state=42)
 clf_all.fit(X, y)
 
-# Score a transition using the helper function from v4 notebook
-p_mal = score_transition(
-    model=clf_all,
-    df_delta=delta_df,
-    ecosystem="pypi",
-    package_name="examplepkg",
-    base_version="1.0.0",
-    next_version="1.1.0",
-    feature_cols=selected_features,
-)
+# Score a real transition that exists in delta_df
+try:
+    p_mal = score_transition(
+        model=clf_all,
+        df_delta=delta_df,
+        ecosystem="pypi",
+        package_name="examplepkg",
+        base_version="1.0.0",
+        next_version="1.1.0",
+        feature_cols=selected_features,
+    )
+    print(f"P(malicious): {p_mal:.3f}")
 
-if p_mal >= 0.5:   # threshold can be tuned
-    print("High-risk transition – investigate before upgrading.")
-else:
-    print("Transition looks benign based on metadata deltas.")
+    if p_mal >= 0.5:  # threshold is tunable
+        print("High-risk transition — investigate before upgrading.")
+    else:
+        print("Transition looks benign based on metadata deltas.")
+except ValueError as e:
+    print(f"[ERROR] {e}")
+    print("This transition row is missing from the delta table.")
 ```
+
+### Demo-only: synthetic transition row (optional)
+
+If you want a quick sanity-check without relying on a real package row:
+
+1. Define `prev_info` and `curr_info` (raw per-version values)
+2. Use `build_dummy_features_from_prev_curr(prev_info, curr_info)` to compute the full delta/ratio feature dict
+3. Append a synthetic row into `delta_df` with:
+
+   * `ecosystem`, `package_name`, `prev_version`, `version`
+   * feature columns in `selected_features`
+   * optionally `y_malicious = 1` (for demonstration)
+4. Call `score_transition(...)` on the synthetic identifiers.
 
 ### Integration Options
 
