@@ -382,9 +382,7 @@ v4's model improved over v3 by adding smarter delta features:
 
 * **Dataset size & bias:** Limited number of labeled transitions; more diverse data would improve generalization
 * **Metadata-only:** Cannot detect all malicious patterns (e.g., obfuscated code, logic bombs)
-* **Version sorting:** May mis-order irregular version strings
 * **Ecosystem coverage:** Currently supports npm and PyPI only
-* **Cold start:** Requires at least one known-good version as baseline
 
 ### Possible Extensions
 
@@ -412,21 +410,5 @@ Unified size deltas/ratios across PyPI + npm → one clean “how much did this 
 * Large-jump boolean flags → crisp “this change was huge” indicators that trees love.
 * Automatic feature selection over both old v3 deltas and the new ones → keeps the strongest ~30 signals.
 * Net effect: the model is more sensitive to suspicious size, density, and structural shifts between versions, while being more robust across ecosystems.
-
-In this notebook context, “structural shifts” = big changes in how the package is put together, not just how big it is.
-Examples between version A → B:
-1. Files & layout
-   * Number of files jumps or drops a lot
-   * New big bundled blob appears (e.g., one huge .js instead of many small ones)
-2. Density
-   * Same file count but way more bytes per file (bytes-per-file proxies)
-4. Metadata / config
-  * delta_num_scripts spikes (new npm scripts like postinstall, preinstall)
-  * delta_num_dependencies / delta_num_dev_dependencies change sharply
-  * delta_num_classifiers / delta_num_keywords change in odd ways
-4. Version / release pattern
-  * Weird version bump pattern (delta_version_len, delta_version_num_dots, prerelease flags)
-
-Those features are all trying to say: “the internal structure and wiring of this package changed a lot in one jump" which is often what happens when someone injects malicious logic.
 
 Everything is driven by the attached Python notebooks and their underlying CSV/serialized artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
