@@ -1,396 +1,382 @@
 # Malicious Package Version Transition Detection
 
+A lightweight, registry-driven early warning system for detecting suspicious package upgrades in npm and PyPI ecosystems using metadata-only analysis.
+
+---
+
+## Overview
+
 This project builds an end-to-end pipeline to detect **malicious version transitions** in open-source ecosystems (PyPI, npm) using **registry metadata** and **version-to-version delta features** only.
 
-The v4 “all transitions” model is trained on every version-to-version jump in the delta table and reaches 0.81 accuracy. For benign transitions, precision/recall are 0.86/0.84; for malicious transitions they are 0.73/0.77. The confusion matrix [[76 15], [12 41]] means 76/91 benign transitions are correctly kept benign, 41/53 malicious transitions are correctly flagged, and benign false positives are held to about 16% (15/91). Unlike the earlier benign→malicious v3 model, which only considered upgrades from a known-good baseline, v4 learns over the full mix of transition types, which is closer to real registry monitoring. Even under this harder, more realistic setting, it still attains 0.77 recall on malicious and 0.84 recall on benign transitions.
+The v4 "all transitions" model is trained on every version-to-version jump in the delta table and reaches **0.81 accuracy**. For benign transitions, precision/recall are 0.86/0.84; for malicious transitions they are 0.73/0.77. The confusion matrix [[76 15], [12 41]] means 76/91 benign transitions are correctly kept benign, 41/53 malicious transitions are correctly flagged, and benign false positives are held to about 16% (15/91).
 
-Given a **known good (benign) or unknown version** of a package and a **candidate next version**, the final model predicts the probability that the transition is **malicious vs benign**, based purely on:
+Unlike the earlier benign→malicious v3 model, which only considered upgrades from a known-good baseline, **v4 learns over the full mix of transition types**, which is closer to real registry monitoring. Even under this harder, more realistic setting, it still attains 0.77 recall on malicious and 0.84 recall on benign transitions.
 
-* How static metadata changes between versions (sizes, file counts, etc.)
-* Simple ratio / “entropy-proxy” features (bytes per file, size ratios, etc.)
-* Text/metadata deltas (description length, classifiers, dependencies, etc.)
+### Key Features
 
-The project is organized into three main Jupyter notebooks that mirror the pipeline:
-
-* `refactored_build_labels_v0.ipynb` – build clean package & version labels
-* `version_diff_live_registries_v3.ipynb` – construct version-to-version delta table
-* `new_features_v4.ipynb` – refine features and train the final transition model
+* **Metadata-only analysis** – No source code or binary inspection required
+* **Delta-focused modeling** – Captures changes between versions rather than absolute values
+* **Multi-ecosystem support** – Works across npm and PyPI with unified features
+* **Practical scoring API** – Simple function to score any package transition
 
 ---
 
-## 1. Pipeline Overview
+## Project Structure
 
-### Step 0 – Labels & Ground Truth (`refactored_build_labels_v0.ipynb`)
-
-**Goal:** Build consistent labels at **package** and **version** levels.
-
-This notebook:
-
-* Ingests raw OSV / OpenSSF malicious package data, Data Dog, NPM and PyPI package registries:
-* https://github.com/ossf/malicious-packages
-* https://github.com/DataDog/malicious-software-packages-dataset
-* https://docs.pypi.org/api/json/
-* https://docs.npmjs.com/cli/v8/using-npm/registry
-* Normalizes records into:
-
-  * `labels_package.csv` – package-level label (e.g., *ever malicious*, ecosystem, etc.).
-  * `labels_version.csv` – version-level labels (benign vs malicious).
-* Applies basic cleaning:
-
-  * Skips malformed or range-only version records.
-  * Normalizes ecosystem identifiers (`npm`, `pypi`, etc.).
-  * Ensures one row per `(ecosystem, package_name, version)` with `label_malicious ∈ {0,1}`.
-
-These CSV outputs are the **only inputs** required by later notebooks for labels.
+```
+Jupyter_v2/
+├── data/
+│   ├── external/
+│   │   ├── malicious-software-packages-dataset/  # DataDog malicious packages
+│   │   └── ossf-malicious-packages/              # OSSF OSV malicious packages
+│   └── meta/
+│       ├── labels_package.csv                    # Package-level labels (v0 output)
+│       ├── labels_package_v1.csv                 # Package-level labels (v1)
+│       ├── labels_version.csv                    # Version-level labels (v0 output)
+│       ├── labels_version_v1.csv                 # Version-level labels (v1)
+│       ├── version_delta_features_live.csv       # Delta transition table (v3 output)
+│       ├── version_delta_features_v4.csv         # Enhanced delta features (v4)
+│       └── selected_delta_features_v4.csv        # Selected features for final model
+├── notebooks/
+│   ├── refactored_build_labels_v0.ipynb          # Label construction and cleaning
+│   ├── version_diff_live_registries_v3.ipynb     # Delta table construction
+│   └── new_features_v4.ipynb                     # Feature refinement + final model
+├── download_ossf_osv.sh                          # Download OSSF data (Unix/Linux/macOS)
+├── download_ossf_osv_v2.sh                       # Download OSSF data (Windows-safe)
+├── requirements.txt                              # Python dependencies
+└── README.md                                     # This file
+```
 
 ---
 
-### Step 1 – Version-to-Version Delta Table (`version_diff_live_registries_v3.ipynb`)
+## Pipeline Overview
 
-**Goal:** Convert per-version metadata into **transitions** and compute deltas.
+### Step 0: Build Labels (`refactored_build_labels_v0.ipynb`)
 
-Key operations (conceptual):
+**Goal:** Build consistent labels at package and version levels.
+
+**Data Sources:**
+* [OSSF Malicious Packages](https://github.com/ossf/malicious-packages)
+* [DataDog Malicious Software Packages](https://github.com/DataDog/malicious-software-packages-dataset)
+* [PyPI JSON API](https://docs.pypi.org/api/json/)
+* [npm Registry](https://docs.npmjs.com/cli/v8/using-npm/registry)
+
+**Process:**
+* Ingests raw OSV / OpenSSF malicious package data
+* Normalizes records into package-level and version-level labels
+* Applies cleaning (skips malformed versions, normalizes ecosystem identifiers)
+* Ensures one row per `(ecosystem, package_name, version)` with `label_malicious ∈ {0,1}`
+
+**Outputs:**
+* `data/meta/labels_package.csv` – Package-level labels
+* `data/meta/labels_version.csv` – Version-level labels
+
+---
+
+### Step 1: Build Delta Table (`version_diff_live_registries_v3.ipynb`)
+
+**Goal:** Convert per-version metadata into transitions and compute deltas.
+
+**Process:**
 
 1. **Load version-level metadata + labels**
-
-   * Import a table of per-version static features (from prior scraping / registry sync).
-   * Join with `labels_version.csv` to obtain `label_malicious` for each version.
+   * Import per-version static features from registry scraping
+   * Join with `labels_version.csv` to obtain malicious labels
 
 2. **Sort and pair consecutive versions**
-
-   * Group by `(ecosystem, package_name)` and sort by the version string.
-   * For each version `v_i`, find its immediate predecessor `v_{i-1}`.
-   * Build a transition row:
-
-     * `prev_version`, `version`
-     * `prev_label_malicious`, `label_malicious` (current)
-     * Static features for `prev_` and current.
+   * Group by `(ecosystem, package_name)` and sort by version
+   * For each version `v_i`, find predecessor `v_{i-1}`
+   * Build transition rows with prev/current version pairs
 
 3. **Compute delta and ratio features**
+   * Text/metadata deltas: `delta_description_len`, `delta_num_dependencies`, etc.
+   * Version string features: `delta_version_len`, `delta_version_num_dots`
+   * Size deltas: `static_size_delta_vs_prev`, `static_size_ratio_vs_prev`
+   * Registry-derived metrics: `delta_npm_unpacked_size_bytes`, `ratio_npm_file_count`
+   * Entropy proxies: `ratio_static_size_uncompressed_bytes`, bytes-per-file indicators
 
-   For each selected static feature `X` (e.g., size, file count, description length):
+4. **Define transition label**
+   * `y_malicious_next = label_malicious_current` (Is the next version malicious?)
 
-   * `delta_X = X_current - X_prev`
-   * `ratio_X = safe_ratio(X_current, X_prev)`
-
-   These include:
-
-   * Text/meta deltas:
-
-     * `delta_description_len`, `delta_num_dependencies`, `delta_num_dev_dependencies`,
-       `delta_num_keywords`, `delta_num_classifiers`, …
-   * Version string features:
-
-     * `delta_version_len`, `delta_version_num_dots`
-   * Static size deltas:
-
-     * `static_size_delta_vs_prev`, `static_size_ratio_vs_prev`
-   * Registry-derived size & file count (where available):
-
-     * `delta_npm_unpacked_size_bytes`, `ratio_npm_unpacked_size_bytes`
-     * `delta_npm_file_count`, `ratio_npm_file_count`
-     * Analogous features for PyPI or generic “static_size_*” fields.
-   * Entropy proxies:
-
-     * `ratio_static_size_uncompressed_bytes`
-     * Bytes per file style indicators (size / file_count).
-
-4. **Define the transition label**
-
-   * `y_malicious_next = label_malicious_current`
-     (“Is the **next** version malicious?”)
-   * Optionally include `prev_label_malicious` to filter:
-
-     * **benign → malicious** transitions.
-     * **benign → benign** “normal” transitions for better negative sampling.
-
-The output of this notebook is a **pure delta table** (often stored as something like
-`version_delta_features_live.csv`) with ~O(#transitions) rows and only **delta / ratio** + label columns.
+**Output:**
+* `data/meta/version_delta_features_live.csv` – Pure delta table with ~O(#transitions) rows
 
 ---
 
-### Step 2 – Feature Refinement & Final Model (`new_features_v4.ipynb`)
+### Step 2: Feature Refinement & Final Model (`new_features_v4.ipynb`)
 
-**Goal:** Build a **clean v4 transition model** that:
+**Goal:** Build a clean v4 transition model using only delta/ratio features.
 
-* Uses **only delta / ratio features** (no raw registry columns merged in).
-* Adds richer size / “entropy-like” proxies.
-* Trains and evaluates a final classifier that can be used in a scoring function.
+**Process:**
 
-Conceptually, this notebook does:
-
-1. **Load delta table**
-
-   * Import the v3 delta CSV (e.g., `version_delta_features_live.csv`).
+1. **Load delta table** from v3 output
 
 2. **Curate and expand feature set**
+   * Unified size deltas across ecosystems
+   * Registry size + file count (deltas & ratios)
+   * Compression/entropy proxies
+   * Text/metadata deltas
+   * **Design rule:** Delta table stays delta-only; no raw registry columns merged
 
-   Starting from the existing delta/ratio columns, v4 focuses on:
-
-   * **Unified size deltas:**
-
-     * `static_size_delta_vs_prev`
-     * `static_size_ratio_vs_prev`
-   * **Registry size + file count (deltas & ratios):**
-
-     * `delta_npm_unpacked_size_bytes`, `ratio_npm_unpacked_size_bytes`
-     * `delta_npm_file_count`, `ratio_npm_file_count`
-     * Optional PyPI analogues (if present).
-   * **Compression / entropy proxies:**
-
-     * `ratio_static_size_uncompressed_bytes`
-     * “bytes per file” style metrics (size / file_count) turned into deltas/ratios.
-   * **Existing text/metadata deltas:**
-
-     * `delta_description_len`, `delta_num_dependencies`, `delta_num_dev_dependencies`,
-       `delta_num_keywords`, `delta_num_classifiers`, …
-     * `delta_version_len`, `delta_version_num_dots`
-
-   **Important design rule in v4:**
-
-   > The **delta table stays delta-only**. Raw registry metadata is used *only* to build new delta / ratio features, **not** merged directly into the final modeling table.
-
-3. **Train / validation split & feature selection**
-
-   * Split transitions into train / test sets (e.g., stratified by label).
-   * Start from a pool of delta / ratio features.
-   * Use univariate selection (e.g., `SelectKBest(f_classif)`) to pick the **top K** signals.
-   * Optionally refine manually based on stability / interpretability.
-
-   Example of selected features (illustrative):
-
-   * `delta_description_len`
-   * `delta_num_dev_dependencies`
-   * `delta_num_keywords`
-   * `delta_version_len`
-   * `delta_version_num_dots`
-   * `static_size_delta_vs_prev`
-   * `static_size_ratio_vs_prev`
-   * `ratio_static_size_uncompressed_bytes`
-   * `delta_npm_unpacked_size_bytes`
-   * `ratio_npm_unpacked_size_bytes`
+3. **Train/validation split & feature selection**
+   * Stratified train/test split
+   * Univariate selection (e.g., `SelectKBest(f_classif)`) to pick top K signals
+   * Manual refinement based on stability/interpretability
 
 4. **Final classifier**
-
-   * Train a **transition classifier** (e.g., `RandomForestClassifier` from scikit-learn)
-     on the selected delta features.
-   * Evaluate:
-
-     * Confusion matrix
-     * Precision/recall/F1 for malicious class
-     * ROC-AUC
-   * Use test-set metrics to discuss the trade-off between:
-
-     * Catching true malicious transitions (recall)
-     * Avoiding false positives (precision/null impact on developers).
+   * Train `RandomForestClassifier` on selected delta features
+   * Evaluate: confusion matrix, precision/recall/F1, ROC-AUC
+   * Balance catching malicious transitions vs. avoiding false positives
 
 5. **Scoring helper – `score_transition`**
+   * Simple API to score any package transition
+   * Returns `P(malicious | delta)` for a given version upgrade
 
-   v4 defines a small helper to make the model easy to use in tooling:
-
-   ```python
-   p_mal = score_transition(
-       model=clf_transition,
-       df_delta=delta_df,
-       ecosystem="npm",
-       package_name="left-pad",
-       base_version="1.1.0",   # previous version
-       next_version="1.1.1",   # candidate
-       feature_cols=selected_features,
-   )
-   print(
-       f"P(malicious) for transition npm:left-pad "
-       f"{base_version} -> {next_version}: {p_mal:.3f}"
-   )
-   ```
-
-   Internally this function:
-
-   * Looks up the matching transition row in `delta_df`.
-   * Extracts only `feature_cols`.
-   * Calls `model.predict_proba([...])` to obtain `P(malicious | delta)`.
-
-   **This is the main “API” of the project** for external consumers.
+**Outputs:**
+* `data/meta/version_delta_features_v4.csv` – Enhanced delta features
+* `data/meta/selected_delta_features_v4.csv` – Selected features
+* Trained model artifacts (e.g., `models/clf_transition.joblib`)
 
 ---
 
-## 2. Directory / File Guide
+## How to Use the Model
 
-* `data/`
+### Inputs Required
 
-  * `meta/`
+* `ecosystem` – `"npm"` or `"pypi"`
+* `package_name` – Canonical package name
+* `base_version` – Known benign version (baseline)
+* `next_version` – Candidate version to evaluate
+* `clf_all` – Loaded scikit-learn model
+* `delta_df` – Delta table with selected features
+* `feature_cols` – List of selected features
 
-    * `labels_package.csv` – package-level labels from v0 notebook.
-    * `labels_version.csv` – version-level labels from v0 notebook.
-  * `processed/`
+### Usage Pattern
 
-    * `version_delta_features_live.csv` – v3 delta-only transition table.
+```python
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 
-* `notebooks/` 
+# Load delta table (generated from v3 notebook)
+delta_df = pd.read_csv("data/meta/version_delta_features_live.csv")
 
-  * `refactored_build_labels_v0.ipynb`
-    Label construction and cleaning.
-  * `version_diff_live_registries_v3.ipynb`
-    Builds the per-transition delta table and basic baselines.
-  * `new_features_v4.ipynb`
-    Feature refinement + final transition model and scoring helper.
+# Load selected features (generated from v4 notebook)
+selected_features_df = pd.read_csv("data/meta/selected_delta_features_v4.csv")
+selected_features = selected_features_df['selected_feature'].tolist()
 
-* `README.md`
+# Train model (or load pre-trained model)
+# This example shows training - in production you'd load a saved model
+X = delta_df[selected_features].fillna(0)
+y = delta_df['label_malicious']
 
----
+clf_all = RandomForestClassifier(n_estimators=100, random_state=42)
+clf_all.fit(X, y)
 
-## 3. Final Model: How to Use It
+# Score a transition using the helper function from v4 notebook
+p_mal = score_transition(
+    model=clf_all,
+    df_delta=delta_df,
+    ecosystem="pypi",
+    package_name="examplepkg",
+    base_version="1.0.0",
+    next_version="1.1.0",
+    feature_cols=selected_features,
+)
 
-### 3.1 Inputs
+if p_mal >= 0.5:   # threshold can be tuned
+    print("High-risk transition – investigate before upgrading.")
+else:
+    print("Transition looks benign based on metadata deltas.")
+```
 
-To score a transition you need:
+### Integration Options
 
-* `ecosystem` – `"npm"` or `"pypi"`.
-* `package_name` – canonical package name.
-* `base_version` – **known benign** version (ideally validated or long-lived stable).
-* `next_version` – candidate version you want to evaluate.
-* `clf_transition` – loaded scikit-learn model from disk.
-* `delta_df` – the delta table built in v3 / v4 (must include the selected features).
-
-### 3.2 Typical usage pattern
-
-1. **Load artifacts:**
-
-   ```python
-   import joblib
-   import pandas as pd
-   import json
-
-   delta_df = pd.read_csv("data/processed/version_delta_features_live.csv")
-   clf_transition = joblib.load("models/clf_transition.joblib")
-   with open("models/feature_cols_transition.json") as f:
-       feature_cols = json.load(f)
-   ```
-
-2. **Score a transition:**
-
-   ```python
-   p_mal = score_transition_from_known_good(
-       model=clf_transition,
-       df_delta=delta_df,
-       ecosystem="pypi",
-       package_name="examplepkg",
-       base_version="1.0.0",
-       next_version="1.1.0",
-       feature_cols=feature_cols,
-   )
-
-   if p_mal >= 0.5:   # threshold can be tuned
-       print("High-risk transition – investigate before upgrading.")
-   else:
-       print("Transition looks benign based on metadata deltas.")
-   ```
-
-3. **Integrations**
-
-   This pattern can be embedded into:
-
-   * CI pipelines (blocking or warning on high-risk transitions).
-   * Internal dependency dashboards.
-   * Offline batch scoring for threat-hunting.
+* CI pipelines (blocking or warning on high-risk transitions)
+* Internal dependency dashboards
+* Offline batch scoring for threat-hunting
 
 Thresholds should be tuned based on your risk tolerance and class imbalance.
 
 ---
 
-## 4. Reproducing the Experiments
+## Reproducing the Experiments
 
-### 4.1 Environment
+### Environment Setup
 
-Suggested:
-
+**Requirements:**
 * Python 3.10+
-* Key libraries:
+* Dependencies in `requirements.txt`:
+  * `pandas` – Data manipulation
+  * `numpy` – Numerical operations
+  * `scikit-learn` – Machine learning models
+  * `joblib` – Model serialization
+  * `packaging` – Version parsing and sorting
+  * `requests` – Registry API calls
+  * `matplotlib` – Visualization
+  * `jupyterlab`, `ipykernel` – Notebook environment (optional)
 
-  * `pandas`
-  * `numpy`
-  * `scikit-learn`
-  * `joblib`
-  * `packaging` (for version sorting, if used)
-  * `requests` (for any optional live registry calls)
-
-Install via:
+**Installation:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4.2 Recommended run order
+### Data Setup
 
-NOTE: You don’t need to run v0 or v3. Notebook v4 can run independently as long as the two input .csv files are present on the machine and the file paths are configured correctly.
+Download OSSF malicious package datasets:
 
-1. **Build labels (if needed)**
-   Run the logic in `refactored_build_labels_v0.ipynb` to regenerate
-   `labels_package.csv` and `labels_version.csv`.
+```bash
+# Unix/Linux/macOS:
+cd data/external
+bash ../../download_ossf_osv.sh
 
-2. **Build delta table**
-   Run `version_diff_live_registries_v3.ipynb` to:
+# Windows (Git Bash or WSL):
+cd data/external
+bash ../../download_ossf_osv_v2.sh
+```
 
-   * Load per-version static metadata.
-   * Merge with `labels_version.csv`.
-   * Compute deltas/ratios.
-   * Write `version_delta_features_live.csv`.
+This populates `data/external/ossf-malicious-packages/` with OSV JSON files for PyPI and npm.
 
-3. **Train / update final model**
-   Run `new_features_v4.ipynb`:
+### Execution Order
 
-   * Load delta table.
-   * Apply feature selection.
-   * Train `clf_transition`.
+**Quick Start (using existing data):**
 
-4. **Use the model**.
+If `data/meta/labels_version.csv` and `data/meta/version_delta_features_live.csv` already exist, skip directly to step 3.
+
+**Full Pipeline:**
+
+1. **Download malicious package data** (see Data Setup above)
+
+2. **Build labels** (if regenerating from scratch)
+   * Open and run `notebooks/refactored_build_labels_v0.ipynb`
+   * Outputs: `data/meta/labels_package.csv`, `data/meta/labels_version.csv`
+
+3. **Build delta table** (if regenerating from scratch)
+   * Open and run `notebooks/version_diff_live_registries_v3.ipynb`
+   * Fetches metadata from npm/PyPI registries
+   * Computes transition deltas
+   * Output: `data/meta/version_delta_features_live.csv`
+
+4. **Train final model**
+   * Open and run `notebooks/new_features_v4.ipynb`
+   * Loads delta table from step 3
+   * Applies feature engineering and selection
+   * Trains `clf_all` classifier
+
+5. **Use the model** (see "How to Use the Model" section)
+
+**Note:** Steps 2-3 can be skipped if you already have the required CSV files in `data/meta/`. The v4 notebook can run independently with existing data.
 
 ---
 
-## 5. Limitations & Future Work
+## Key Features & Signals
 
-* **Dataset size & bias:** Current delta table has a limited number of transitions; more data from diverse ecosystems would improve generalization.
-* **Metadata-only:** The model explicitly avoids source code / binary inspection. It **cannot** detect all malicious patterns; it focuses on anomalous metadata changes.
-* **Version sorting:** Simple lexicographic or `packaging.version` comparisons may mis-order highly irregular version strings.
+### What the Model Detects
 
-Possible extensions:
+The transition classifier identifies suspicious patterns in version-to-version changes:
 
-* Expand to more ecosystems (e.g., RubyGems, crates.io).
-* Add richer static features (e.g., manifest structure, simple AST stats) while keeping the “delta” design.
-* Explore calibrated models and active learning for better thresholds and analyst feedback.
+1. **Size anomalies**
+   * Sudden package size spikes or drops
+   * Unified size deltas across npm (unpacked size) and PyPI (compressed size)
+   * Log-magnitude features capture large jumps without outlier skew
+
+2. **Structural shifts**
+   * File count changes (many small files → one large blob)
+   * Density changes (bytes-per-file ratios)
+   * Large-jump boolean flags for dramatic changes
+
+3. **Metadata anomalies**
+   * Dependency count changes (`delta_num_dependencies`, `delta_num_dev_dependencies`)
+   * Script additions (npm `postinstall`, `preinstall` hooks)
+   * Classifier/keyword changes in PyPI packages
+
+4. **Version pattern anomalies**
+   * Unusual version string changes (`delta_version_len`, `delta_version_num_dots`)
+   * Prerelease flag changes
+
+### Example Features
+
+* `delta_description_len` – Description text length change
+* `delta_num_dev_dependencies` – Dev dependency count change
+* `static_size_delta_vs_prev` – Absolute size change
+* `static_size_ratio_vs_prev` – Relative size change
+* `ratio_npm_unpacked_size_bytes` – npm unpacked size ratio
+* `delta_npm_unpacked_size_bytes` – npm unpacked size delta
+
+### What Are "Structural Shifts"?
+
+Big changes in how a package is organized between versions (A → B):
+
+1. **Files & layout**
+   * File count jumps/drops significantly
+   * New large bundled blob appears (e.g., one huge .js instead of many small files)
+
+2. **Density**
+   * Same file count but way more bytes per file
+
+3. **Metadata/config**
+   * `delta_num_scripts` spikes (new npm `postinstall`/`preinstall` hooks)
+   * `delta_num_dependencies` / `delta_num_dev_dependencies` change sharply
+   * `delta_num_classifiers` / `delta_num_keywords` change oddly
+
+4. **Version/release pattern**
+   * Unusual version bump pattern (`delta_version_len`, `delta_version_num_dots`, prerelease flags)
+
+These features detect when "the internal structure and wiring of this package changed a lot in one jump" – a common indicator of injected malicious logic.
 
 ---
 
-## 6. Summary
+## Why v4 Performs Better
+
+v4's model improved over v3 by adding smarter delta features:
+
+* **Unified size deltas/ratios** across PyPI + npm → clean "how much did this release change?" signal
+* **Density/bytes-per-file proxies** → catch packages that suddenly become denser/packed
+* **Log-magnitude + sign features** → model sees change magnitude and direction without outlier skew
+* **Large-jump boolean flags** → crisp "this change was huge" indicators that trees love
+* **Automatic feature selection** → keeps strongest ~30 signals from expanded pool
+
+**Net effect:** More sensitive to suspicious size, density, and structural shifts while being more robust across ecosystems.
+
+---
+
+## Limitations & Future Work
+
+### Current Limitations
+
+* **Dataset size & bias:** Limited number of labeled transitions; more diverse data would improve generalization
+* **Metadata-only:** Cannot detect all malicious patterns (e.g., obfuscated code, logic bombs)
+* **Version sorting:** May mis-order irregular version strings
+* **Ecosystem coverage:** Currently supports npm and PyPI only
+* **Cold start:** Requires at least one known-good version as baseline
+
+### Possible Extensions
+
+* **More ecosystems:** RubyGems, crates.io, Maven Central, NuGet
+* **Richer features:** Manifest structure analysis, simple AST statistics
+* **Model improvements:** Calibrated probabilities, ensemble methods, active learning
+* **Integration:** CI/CD plugins, dependency scanning tools, security dashboards
+* **Real-time monitoring:** Stream processing for new package releases
+
+---
+
+## Summary
 
 This project provides a **lightweight, registry-driven early warning system** for suspicious package upgrades:
 
-* v0 builds robust labels.
-* v3 constructs a clean **delta-only transition table**.
-* v4 refines features and trains a **final transition classifier** with a simple scoring API.
+* **v0** builds robust labels from OSSF and DataDog datasets
+* **v3** constructs a clean delta-only transition table
+* **v4** refines features and trains a final transition classifier with a simple scoring API
 
-v4’s model got better mainly because it added smarter delta features on top of v3:
-Unified size deltas/ratios across PyPI + npm → one clean “how much did this release change in size?” signal.
-* Density / bytes-per-file proxies → catch packages that suddenly become much denser/packed.
-* Log-magnitude + sign features for big jumps → model sees how big the change is and in which direction (grow vs shrink) without being skewed by outliers.
-* Large-jump boolean flags → crisp “this change was huge” indicators that trees love.
-* Automatic feature selection over both old v3 deltas and the new ones → keeps the strongest ~30 signals.
-* Net effect: the model is more sensitive to suspicious size, density, and structural shifts between versions, while being more robust across ecosystems.
+Everything is driven by Python notebooks and CSV artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
 
-In this notebook context, “structural shifts” = big changes in how the package is put together, not just how big it is.
-Examples between version A → B:
-1. Files & layout
-   * Number of files jumps or drops a lot
-   * New big bundled blob appears (e.g., one huge .js instead of many small ones)
-2. Density
-   * Same file count but way more bytes per file (bytes-per-file proxies)
-4. Metadata / config
-  * delta_num_scripts spikes (new npm scripts like postinstall, preinstall)
-  * delta_num_dependencies / delta_num_dev_dependencies change sharply
-  * delta_num_classifiers / delta_num_keywords change in odd ways
-4. Version / release pattern
-  * Weird version bump pattern (delta_version_len, delta_version_num_dots, prerelease flags)
+---
 
-Those features are all trying to say: “the internal structure and wiring of this package changed a lot in one jump" which is often what happens when someone injects malicious logic.
+## Getting Help
 
-Everything is driven by the attached Python notebooks and their underlying CSV/serialized artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
+For questions or issues:
+
+1. Check notebook comments and markdown cells for detailed explanations
+2. Review `data/meta/` CSV files to understand data structure
+3. Examine feature engineering code in `new_features_v4.ipynb`
+4. Verify file paths match your local setup
