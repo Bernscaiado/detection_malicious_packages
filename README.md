@@ -30,10 +30,10 @@ Jupyter_v2/
 │   │   ├── malicious-software-packages-dataset/  # DataDog malicious packages
 │   │   └── ossf-malicious-packages/              # OSSF OSV malicious packages
 │   └── meta/
-│       ├── labels_package.csv                    # Package-level labels (v0 output)
-│       ├── labels_package_v1.csv                 # Package-level labels (v1)
-│       ├── labels_version.csv                    # Version-level labels (v0 output)
-│       ├── labels_version_v1.csv                 # Version-level labels (v1)
+│       ├── labels_package.csv                    # Package-level labels (patial-data)
+│       ├── labels_package_v1.csv                 # Package-level labels (full-data)
+│       ├── labels_version.csv                    # Version-level labels (partial-data)
+│       ├── labels_version_v1.csv                 # Version-level labels (full-data)
 │       ├── version_delta_features_live.csv       # Delta transition table (v3 output)
 │       ├── version_delta_features_v4.csv         # Enhanced delta features (v4)
 │       └── selected_delta_features_v4.csv        # Selected features for final model
