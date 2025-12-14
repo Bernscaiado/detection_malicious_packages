@@ -241,7 +241,7 @@ This populates `data/external/ossf-malicious-packages/` with OSV JSON files for 
 
 **Quick Start (using existing data):**
 
-If `data/meta/labels_version.csv` and `data/meta/version_delta_features_live.csv` already exist, skip directly to step 3.
+If `data/meta/labels_version.csv` and `data/meta/version_delta_features_live.csv` already exist, skip directly to step 4 (confirm correct file paths are used).
 
 **Full Pipeline:**
 
@@ -265,7 +265,7 @@ If `data/meta/labels_version.csv` and `data/meta/version_delta_features_live.csv
 
 5. **Use the model** (see "How to Use the Model" section)
 
-**Note:** Steps 2-3 can be skipped if you already have the required CSV files in `data/meta/`. The v4 notebook can run independently with existing data.
+**Note:** Steps 1-3 can be skipped if you already have the required CSV files in `data/meta/`. The v4 notebook can run independently with existing data.
 
 ---
 
