@@ -116,7 +116,7 @@ Jupyter_v2/
    * Registry size + file count (deltas & ratios)
    * Compression/entropy proxies
    * Text/metadata deltas
-   * **Design rule:** Delta table stays delta-only; no raw registry columns merged
+   * **Design rule:** Delta table stays delta-only
 
 3. **Train/validation split & feature selection**
    * Stratified train/test split
@@ -135,7 +135,6 @@ Jupyter_v2/
 **Outputs:**
 * `data/meta/version_delta_features_v4.csv` – Enhanced delta features
 * `data/meta/selected_delta_features_v4.csv` – Selected features
-* Trained model artifacts (e.g., `models/clf_transition.joblib`)
 
 ---
 
@@ -402,13 +401,5 @@ This project provides a **lightweight, registry-driven early warning system** fo
 * v0 builds robust labels.
 * v3 constructs a clean **delta-only transition table**.
 * v4 refines features and trains a **final transition classifier** with a simple scoring API.
-
-v4’s model got better mainly because it added smarter delta features on top of v3:
-Unified size deltas/ratios across PyPI + npm → one clean “how much did this release change in size?” signal.
-* Density / bytes-per-file proxies → catch packages that suddenly become much denser/packed.
-* Log-magnitude + sign features for big jumps → model sees how big the change is and in which direction (grow vs shrink) without being skewed by outliers.
-* Large-jump boolean flags → crisp “this change was huge” indicators that trees love.
-* Automatic feature selection over both old v3 deltas and the new ones → keeps the strongest ~30 signals.
-* Net effect: the model is more sensitive to suspicious size, density, and structural shifts between versions, while being more robust across ecosystems.
 
 Everything is driven by the attached Python notebooks and their underlying CSV/serialized artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
