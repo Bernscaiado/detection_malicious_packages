@@ -1,6 +1,6 @@
 # Malicious Package Version Transition Detection
 
-A lightweight, registry-driven early warning system for detecting suspicious package upgrades in npm and PyPI ecosystems using metadata-only analysis.
+A lightweight, registry-driven early warning system for detecting suspicious package upgrades in npm and PyPI ecosystems using metadata analysis.
 
 ---
 
