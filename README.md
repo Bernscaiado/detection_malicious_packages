@@ -403,3 +403,5 @@ This project provides a **lightweight, registry-driven early warning system** fo
 * v4 refines features and trains a **final transition classifier** with a simple scoring API.
 
 Everything is driven by the attached Python notebooks and their underlying CSV/serialized artifacts, making it straightforward to reproduce, extend, or integrate into your own security tooling.
+
+[Demo Video](https://www.youtube.com/watch?v=L1adPJaGESw)
