@@ -386,7 +386,7 @@ v4's model improved over v3 by adding smarter delta features:
 ### Possible Extensions
 
 * **More ecosystems:** RubyGems, crates.io, Maven Central, NuGet
-* **Richer features:** Manifest structure analysis, simple AST statistics
+* **Richer features:** Dynamic Analysis features (process creation / command-lines, file system writes, registry diffs, network/DNS/HTTP connections & IOCs), Manifest structure analysis, simple AST statistics 
 * **Model improvements:** Calibrated probabilities, ensemble methods, active learning
 * **Integration:** CI/CD plugins, dependency scanning tools, security dashboards
 * **Real-time monitoring:** Stream processing for new package releases
