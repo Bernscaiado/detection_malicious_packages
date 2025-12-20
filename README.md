@@ -25,6 +25,8 @@ Unlike the earlier benign→malicious v3 model, which only considered upgrades f
 
 ```
 Jupyter_v2/
+├── case_study/
+│   └── shai_hulud.md                             # Case study (motivation behind model)
 ├── data/
 │   ├── external/
 │   │   ├── malicious-software-packages-dataset/  # DataDog malicious packages
